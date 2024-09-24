@@ -27,14 +27,7 @@
                     <div class="section-title text-start mb-20">
                         <h2 class="uppercase">Danh sách top sản phẩm</h2>
                     </div>
-<<<<<<< HEAD
                 
-=======
-                    <div class="featured-product">
-                        <div class="active-featured-product slick-arrow-2">
-                           
-                        </div>
->>>>>>> 4ecf622a4aafeb4f0e47676a99fe32483aae9693
 
                     </div>
                 </div>
@@ -51,19 +44,10 @@
                 <div class="col-lg-8">
                     <div class="up-comming-pro gray-bg up-comming-pro-2 clearfix">
                         <div class="up-comming-pro-img f-left">
-<<<<<<< HEAD
                        
                         </div>
                         <div class="up-comming-pro-info f-left">
                             <h3><a href="">XEM NGAY</a></h3>
-=======
-                            <a href="#">
-                                <img src="upload/anh7.jpg" alt="" height="350px" width="200px">
-                            </a>
-                        </div>
-                        <div class="up-comming-pro-info f-left">
-                            <h3><a href="index.php?act=sanpham&iddm=3">XEM NGAY</a></h3>
->>>>>>> 4ecf622a4aafeb4f0e47676a99fe32483aae9693
                             <p>
                                 Các điện thoại iPhone là dòng sản phẩm điện thoại thông minh do Apple Inc. phát triển và sản xuất. Dòng điện thoại iPhone đã trở thành một trong những biểu tượng của thế giới công nghệ, với sự kết hợp giữa thiết kế đẹp mắt, hiệu suất mạnh mẽ và hệ điều hành iOS được tối ưu hóa. </p>
 
@@ -73,15 +57,7 @@
                 <div class="col-lg-4 d-block d-md-none d-lg-block">
                     <div class="banner-item banner-1">
                         <div class="ribbon-price">
-<<<<<<< HEAD
                   
-=======
-                            <span>GIẢM GIÁ</span>
-                        </div>
-                        <div class="banner-img">
-                            <a href=""><img src="upload/Samsung Galaxy S23 Ultra.jpg" alt=""></a>
-                        </div>
->>>>>>> 4ecf622a4aafeb4f0e47676a99fe32483aae9693
 
                     </div>
                 </div>
@@ -106,19 +82,10 @@
                         <div id="popular-product" class="tab-pane active show">
                             <div class="row">
                    
-<<<<<<< HEAD
                                     <div class="col-lg-3 col-md-4 ">
                                         <div class="product-item product-item-2 ">
                                             <div class="product-img">
                                             
-=======
-                                    <div class="col-lg-3 col-md-4 <?php echo $mr ?>">
-                                        <div class="product-item product-item-2 ">
-                                            <div class="product-img">
-                                                <a href="<?php echo $linksp ?>">
-                                                    <img src="<?php echo $hinh ?>" alt="" />
-                                                </a>
->>>>>>> 4ecf622a4aafeb4f0e47676a99fe32483aae9693
                                             </div>
                                             <div class="product-info">
                                                 <h6 class="product-title">
@@ -126,10 +93,6 @@
                                 
                                                 <h3 class="pro-price">   </h3>
                                                 <ul class="action-button" style="background-color: darkred;">
-<<<<<<< HEAD
-=======
-                                                    <button style="color: #fff;" data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price ?>)">Thêm vào giỏ hàng</button>
->>>>>>> 4ecf622a4aafeb4f0e47676a99fe32483aae9693
                                                 </ul>
                                             </div>
                                         </div>

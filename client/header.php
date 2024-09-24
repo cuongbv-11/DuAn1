@@ -91,20 +91,9 @@
                                     <ul class="main-menu text-center">
                                         <li><a href="index.php">Trang Chủ</a>
                                         </li>
-<<<<<<< HEAD
                                         <li class="mega-parent"><a href="">Danh Sách Sản Phẩm</a>
                                         </li>
                                      
-=======
-                                        <li class="mega-parent"><a href="index.php?act=sanpham">Danh Sách Sản Phẩm</a>
-                                        </li>
-                                        <?php
-                                        // Check if the user is logged in
-                                        if (isset($_SESSION['user'])) {
-                                            echo '<li class="mega-parent"><a href="index.php?act=mybill">Đơn Mua</a></li>';
-                                        }
-                                        ?>
->>>>>>> 4ecf622a4aafeb4f0e47676a99fe32483aae9693
                                     </ul>
                                 </nav>
                             </div>
@@ -117,11 +106,7 @@
                                             <button class="search-toggle">
                                                 <i class="zmdi zmdi-search"></i>
                                             </button>
-<<<<<<< HEAD
                                             <form action="" method="POST">
-=======
-                                            <form action="index.php?act=sanpham" method="POST">
->>>>>>> 4ecf622a4aafeb4f0e47676a99fe32483aae9693
                                                 <div class="top-search-box">
                                                     <input type="text" id="" placeholder="Tìm Kiếm " name="keyword">
                                                     <button type="submit">
