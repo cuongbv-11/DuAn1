@@ -101,47 +101,6 @@ function updateTrangThai(id, trangthai) {
   $('#sampleTable').DataTable();
 </script>
 <script>
-<<<<<<< HEAD
-=======
-  function deleteRow(r) {
-    var i = r.parentNode.parentNode.rowIndex;
-    document.getElementById("myTable").deleteRow(i);
-  }
-  jQuery(function() {
-    jQuery(".trash").click(function() {
-      swal({
-          title: "Cảnh báo",
-
-          text: "Bạn có chắc chắn là muốn xóa nhân viên này?",
-          buttons: ["Hủy bỏ", "Đồng ý"],
-        })
-        .then((willDelete) => {
-          if (willDelete) {
-            swal("Đã xóa thành công.!", {
-
-            });
-          }
-        });
-    });
-  });
-  oTable = $('#sampleTable').dataTable();
-  $('#all').click(function(e) {
-    $('#sampleTable tbody :checkbox').prop('checked', $(this).is(':checked'));
-    e.stopImmediatePropagation();
-  });
-
-  //EXCEL
-  // $(document).ready(function () {
-  //   $('#').DataTable({
-
-  //     dom: 'Bfrtip',
-  //     "buttons": [
-  //       'excel'
-  //     ]
-  //   });
-  // });
-
->>>>>>> 4ecf622a4aafeb4f0e47676a99fe32483aae9693
 
   //Thời Gian
   function time() {
@@ -183,28 +142,6 @@ function updateTrangThai(id, trangthai) {
       return i;
     }
   }
-<<<<<<< HEAD
-=======
-  //In dữ liệu
-
-  //     //Sao chép dữ liệu
-  //     var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
-
-  // copyTextareaBtn.addEventListener('click', function(event) {
-  //   var copyTextarea = document.querySelector('.js-copytextarea');
-  //   copyTextarea.focus();
-  //   copyTextarea.select();
-
-  //   try {
-  //     var successful = document.execCommand('copy');
-  //     var msg = successful ? 'successful' : 'unsuccessful';
-  //     console.log('Copying text command was ' + msg);
-  //   } catch (err) {
-  //     console.log('Oops, unable to copy');
-  //   }
-  // });
-
->>>>>>> 4ecf622a4aafeb4f0e47676a99fe32483aae9693
 
   //Modal
   $("#show-emp").on("click", function() {
