@@ -19,11 +19,19 @@
         <a href="index.php?act=listdm"><input class="mr20" type="button" value="DANH SÁCH"></a>
       </div>
       
+<<<<<<< HEAD
       <?php if (isset($thongbao)): ?>
     <div class="alert alert-success">
         <?php echo $thongbao; ?>
     </div>
 <?php endif; ?>
+=======
+      <?php
+      if (isset($thongbao) && ($thongbao != "")) {
+        echo $thongbao;
+      }
+      ?>
+>>>>>>> 4ecf622a4aafeb4f0e47676a99fe32483aae9693
     </form>
   </div>
 </div>
