@@ -1,6 +1,5 @@
 <?php
 include "header.php";
-include "home.php";
 include "./model/pdo.php";
 include "./model/danhmuc.php";
 if (isset($_GET['act'])) {
@@ -10,14 +9,17 @@ if (isset($_GET['act'])) {
             if (isset($_POST['themmoi']) && $_POST['themmoi']) {
                 $tenloai = $_POST['tenloai'];
                 $result = insert_danhmuc($tenloai);
+                $listdanhmuc = loadall_danhmuc();
+                include "danhmuc/list.php";
         
                 if ($result) {
                     $thongbao = 'THÊM THÀNH CÔNG';
                 } else {
-                    $thongbao = 'THÊM THÀNH CÔNG.';
+                    $thongbao = 'Thêm Sản Phẩm Thành Công';
                 }
+                
             }
-        
+            
             include "danhmuc/add.php";
             break;
         
@@ -58,7 +60,6 @@ if (isset($_GET['act'])) {
             include "danhmuc/list.php";
             break;
     }
-} else {
-    include "home.php";
+include "home.php";
 }
 include "footer.php";

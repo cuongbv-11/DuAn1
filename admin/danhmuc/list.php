@@ -4,27 +4,24 @@
       <li class="breadcrumb-item active"><a href="#"><b>Danh sách danh mục</b></a></li>
     </ul>
     <div id="clock"></div>
-  </div>
-
-  <div class="row">
+  </div>  
+  
     <div class="col-md-12">
       <div class="tile">
         <div class="tile-body">
-
-          <div class="row element-button">
-            <div class="col-sm-2">
+          <div class=" element-button">
               <a class="btn btn-add btn-sm" href="index.php?act=adddm" title="Thêm"><i class="fas fa-plus"></i>
                 Tạo mới danh mục</a>
-            </div>
           </div>
-          <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0" id="sampleTable">
+          <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0"
+            id="sampleTable">
             <thead>
               <tr>
                 <th width="10"><input type="checkbox" id="all"></th>
-                <th>MÃ LOẠI</th>
-                <th width="150">TÊN DANH MỤC</th>
+                <th width="10">ID</th>
+                <th width="150">Danh Mục</th>
                 <th width="100">Trạng thái</th> <!-- Thêm tiêu đề cho cột trạng thái -->
-                <th width="100">Tính năng</th>
+                <th width="100">Chức Năng</th>
               </tr>
             </thead>
             <tbody>
@@ -60,24 +57,24 @@
         </div>
       </div>
     </div>
-  </div>
+
 </main>
 
 <script>
-function updateTrangThai(id, trangthai) {
-  // Gửi yêu cầu AJAX để cập nhật trạng thái danh mục
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'index.php?act=updatetrangthai');
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      console.log('Cập nhật trạng thái thành công');
-    } else {
-      console.log('Cập nhật trạng thái thất bại');
-    }
-  };
-  xhr.send('id=' + id + '&trangthai=' + trangthai);
-}
+  function updateTrangThai(id, trangthai) {
+    // Gửi yêu cầu AJAX để cập nhật trạng thái danh mục
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'index.php?act=updatetrangthai');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        console.log('Cập nhật trạng thái thành công');
+      } else {
+        console.log('Cập nhật trạng thái thất bại');
+      }
+    };
+    xhr.send('id=' + id + '&trangthai=' + trangthai);
+  }
 </script>
 
 
@@ -144,7 +141,7 @@ function updateTrangThai(id, trangthai) {
   }
 
   //Modal
-  $("#show-emp").on("click", function() {
+  $("#show-emp").on("click", function () {
     $("#ModalUP").modal({
       backdrop: false,
       keyboard: false
