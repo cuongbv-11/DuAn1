@@ -13,7 +13,6 @@ if (isset($_GET['act'])) {
                 include "danhmuc/list.php";
         
                 if ($result) {
-                    $thongbao = 'THÊM THÀNH CÔNG';
                 } else {
                     $thongbao = 'Thêm Sản Phẩm Thành Công';
                 }
@@ -33,7 +32,7 @@ if (isset($_GET['act'])) {
                 if (empty($list_fk)) {
                     delete_danhmuc($_GET['id']);
                 } else {
-                    $thongbao = 'Danh mục còn sản phẩm, vui lòng xóa sản phẩm trước khi xóa danh mục';
+                    $thongbao = 'Xoa thanh cong';
                 }
             }
             $listdanhmuc = loadall_danhmuc();
