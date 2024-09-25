@@ -9,7 +9,6 @@ if (is_array($dm)) {
       <li class="breadcrumb-item active"><a href="#"><b>Tạo Danh Mục Mới</b></a></li>
     </ul>
   </div>
-<<<<<<< HEAD
   <div class="col-md-12">
     <div class="tile">
       <div class="tile-body">
@@ -44,13 +43,12 @@ if (is_array($dm)) {
           }
           ?>
         </form>
-=======
   <div class="row2 form_content ">
     <form action="index.php?act=updatedm" method="POST">
       <div class="row2 mb10 form_content_container" style="display:none;">
         <label> Mã loại </label> <br>
         <input type="text" name="maloai" placeholder="nhập vào mã loại" disabled>
->>>>>>> 072741af07c05d68d3b1cf406956dfcab646fcc3
+
       </div>
     </div>
 

@@ -4,26 +4,6 @@
       <li class="breadcrumb-item active"><a href="#"><b>Tạo Danh Mục Mới</b></a></li>
     </ul>
   </div>
-<<<<<<< HEAD
-  <div class="col-md-12">
-    <div class="tile">
-      <div class="tile-body">
-=======
-  <div class="row2 form_content ">
-    <form action="index.php?act=adddm" method="POST">
-      <div class="row2 mb10 form_content_container" style="display:none;">
-        <label> Mã loại </label> <br>
-        <input type="text" name="maloai" placeholder="nhập vào mã loại" >
-      </div>
-      <div class="row2 mb10">
-        <label>Tên loại </label> <br>
-        <input type="text" name="tenloai" placeholder="nhập vào tên">
-      </div>
-      <div class="row mb10 ">
-        <input class="mr20" type="submit" name="themmoi" value="THÊM MỚI" style="background-color: rgb(0, 28, 64);">
-        <input class="mr20" type="reset" value="NHẬP LẠI">
->>>>>>> 072741af07c05d68d3b1cf406956dfcab646fcc3
-
         <form action="index.php?act=adddm" method="POST">
           <div class="mb-3 " style="display: none">
             <label> Mã loại </label> <br>
