@@ -9,7 +9,7 @@ if (is_array($dm)) {
   </div>
   <div class="row2 form_content ">
     <form action="index.php?act=updatedm" method="POST">
-      <div class="row2 mb10 form_content_container">
+      <div class="row2 mb10 form_content_container" style="display:none;">
         <label> Mã loại </label> <br>
         <input type="text" name="maloai" placeholder="nhập vào mã loại" disabled>
       </div>
