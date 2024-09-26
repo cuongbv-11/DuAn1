@@ -15,6 +15,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $tel = $_POST['tel'];
                 insert_taikhoan($email, $user, $pass, $address, $tel);
                 $thongbao = "Đã đăng ký thành công. Vui lòng đăng nhập tài khoản";
+                echo '
+                <script>
+                    if (confirm("Bạn đã đăng ký thành công. Bạn có muốn đăng nhập ngay không?")) {
+                        window.location.href = "index.php?act=dangnhap";
+                    }
+                </script>';
+                exit();
             }
             include "client/taikhoan/dangky.php";
             break;
