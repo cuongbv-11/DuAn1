@@ -91,9 +91,9 @@
                                     <ul class="main-menu text-center">
                                         <li><a href="index.php">Trang Chủ</a>
                                         </li>
-                                        <li class="mega-parent"><a href="">Danh Sách Sản Phẩm</a>
+                                        <li class="mega-parent"><a href="index.php?act=sanpham">Danh Sách Sản Phẩm</a>
                                         </li>
-                                     
+                                
                                     </ul>
                                 </nav>
                             </div>
@@ -106,7 +106,7 @@
                                             <button class="search-toggle">
                                                 <i class="zmdi zmdi-search"></i>
                                             </button>
-                                            <form action="" method="POST">
+                                            <form action="index.php?act=sanpham" method="POST">
                                                 <div class="top-search-box">
                                                     <input type="text" id="" placeholder="Tìm Kiếm " name="keyword">
                                                     <button type="submit">
