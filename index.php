@@ -6,8 +6,6 @@ include "model/taikhoan.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-      
-
         case 'dangky':
             if ((isset($_POST['dangky'])) && ($_POST['dangky'])) {
                 $email = $_POST['email'];
@@ -41,7 +39,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $thongbao = "Sai tài khoản! Kiểm tra lại thông tin đăng nhập";
                 }
             }
-            include "view/login.php";
+            include "client/login.php";
             break;
 
 
@@ -55,7 +53,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $thongbao = "Email này không tồn tại trên hệ thống!";
                 }
             }
-            include "view/taikhoan/quenmk.php";
+            include "client/taikhoan/quenmk.php";
             break;
         case 'edit_taikhoan':
             if ((isset($_POST['capnhat'])) && ($_POST['capnhat'])) {
@@ -69,10 +67,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $_SESSION['user'] = check_user($user, $pass);
                 $thongbao = "Đã cập nhật thành công";
             }
-            include "view/taikhoan/edit_taikhoan.php";
+            include "client/taikhoan/edit_taikhoan.php";
             break;
     }
 } else {
-    include "view/home.php";
+    include "client/home.php";
 }
-include "view/footer.php";
+include "client/footer.php";
