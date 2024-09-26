@@ -2,6 +2,7 @@
 include "header.php";
 include "./model/pdo.php";
 include "./model/danhmuc.php";
+include "./model/sanpham.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -89,6 +90,7 @@ if (isset($_GET['act'])) {
             }
             $listdanhmuc = loadall_danhmuc();
             $listsanpham = loadall_sanpham($kyw, $iddm);
+
             include "sanpham/list.php";
             break;
         case 'xoasp':
