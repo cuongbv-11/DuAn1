@@ -46,7 +46,7 @@
       <!-- <li><a class="app-menu__item haha" href="phan-mem-ban-hang.html"><i class='app-menu__icon bx bx-cart-alt'></i>
           <span class="app-menu__label">POS Bán Hàng</span></a></li> -->
       <li><a class="app-menu__item  " href=""><i class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Quản lý Tài Khoản</span></a></li>
-      <li><a class="app-menu__item" href=""><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý sản phẩm</span></a>
+      <li><a class="app-menu__item" href="index.php?act=listsp"><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý sản phẩm</span></a>
       </li>
       <li><a class="app-menu__item" href="index.php?act=listdm"><i class='app-menu__icon bx bx-task'></i><span class="app-menu__label">Quản lý danh mục</span></a></li>
       <li><a class="app-menu__item  " href=""><i class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Quản lý Đơn Đặt Hàng</span></a></li>
