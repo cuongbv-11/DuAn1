@@ -28,7 +28,7 @@
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
       <!-- User Menu-->
-      <li><a class="app-nav__item" href="../index.php?act=Thoat"><i class='bx bx-log-out bx-rotate-180'></i> TRỞ VỀ TRANG WEB</a>
+      <li><a class="app-nav__item" href="../index.php?act=Thoat"><i class='bx bx-log-out bx-rotate-180'></i> Trở Về Trang Chủ</a>
       </li>
     </ul>
   </header>
@@ -45,14 +45,20 @@
     <ul class="app-menu">
       <!-- <li><a class="app-menu__item haha" href="phan-mem-ban-hang.html"><i class='app-menu__icon bx bx-cart-alt'></i>
           <span class="app-menu__label">POS Bán Hàng</span></a></li> -->
-      <li><a class="app-menu__item  " href="index.php?act=home"><i class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Home</span></a></li>
       <li><a class="app-menu__item  " href=""><i class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Quản lý Tài Khoản</span></a></li>
       <li><a class="app-menu__item" href=""><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý sản phẩm</span></a>
       </li>
       <li><a class="app-menu__item" href="index.php?act=listdm"><i class='app-menu__icon bx bx-task'></i><span class="app-menu__label">Quản lý danh mục</span></a></li>
-      <li><a class="app-menu__item" href="index.php?act=listdm"><i class='app-menu__icon bx bx-task'></i><span class="app-menu__label">Quản lý don hang</span></a></li>
-
-   
+      <li><a class="app-menu__item  " href=""><i class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Quản lý Đơn Đặt Hàng</span></a></li>
 
     </ul>
   </aside>
+  <br>
+<div class="row2">
+
+  <div class="row2 form_content ">
+    <div class="row2 mb10 form_content_container">
+      <h1>QUẢN TRỊ SẢN PHẨM</h1>
+    </div>
+  </div>
+</div>

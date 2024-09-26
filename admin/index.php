@@ -1,6 +1,5 @@
 <?php
 include "header.php";
-include "home.php";
 include "./model/pdo.php";
 include "./model/danhmuc.php";
 if (isset($_GET['act'])) {
@@ -12,11 +11,13 @@ if (isset($_GET['act'])) {
                 $result = insert_danhmuc($tenloai);
         
                 if ($result) {
+                    $thongbao = 'THÊM THÀNH CÔNG';
                 } else {
-                    $thongbao = 'THÊM THÀNH CÔNG.';
+                    $thongbao = 'Thêm Sản Phẩm Thành Công';
                 }
+                
             }
-        
+            
             include "danhmuc/add.php";
             break;
         
@@ -30,7 +31,7 @@ if (isset($_GET['act'])) {
                 if (empty($list_fk)) {
                     delete_danhmuc($_GET['id']);
                 } else {
-                    $thongbao = 'Xoa thanh cong';
+                    $thongbao = 'Danh mục còn sản phẩm, vui lòng xóa sản phẩm trước khi xóa danh mục';
                 }
             }
             $listdanhmuc = loadall_danhmuc();
@@ -57,7 +58,6 @@ if (isset($_GET['act'])) {
             include "danhmuc/list.php";
             break;
     }
-} else {
-    include "home.php";
+include "home.php";
 }
 include "footer.php";
