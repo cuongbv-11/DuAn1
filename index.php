@@ -16,7 +16,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 insert_taikhoan($email, $user, $pass, $address, $tel);
                 $thongbao = "Đã đăng ký thành công. Vui lòng đăng nhập tài khoản";
             }
-            include "view/taikhoan/dangky.php";
+            include "client/taikhoan/dangky.php";
             break;
         case 'dangnhap':
             if ((isset($_POST['dangnhap'])) && ($_POST['dangnhap'])) {
