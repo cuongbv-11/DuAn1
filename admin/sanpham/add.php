@@ -32,7 +32,7 @@
       <label for="floatingTextarea2">Mô Tả: </label>
     </div>
     <input id="popUpYes"  type="submit" name="themmoi" value="Thêm">
-    <a href="index.php?act=listsp"><input  id="popUpYes" type="button" value="Danh Sách Sản Phẩm"></a>
+    <a href="index.php?act=listsp"><input  id="popUpYess" type="button" value="Danh Sách Sản Phẩm"></a>
     <?php
       if (isset($thongbao) && ($thongbao != "")) {
         echo $thongbao;

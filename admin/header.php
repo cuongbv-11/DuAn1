@@ -31,8 +31,10 @@
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <style>
     #popUpYes:hover {
-      background-color: black;
       color: yellow;
+    } 
+    #popUpYess:hover {
+      color: white;
     } 
   </style>
 

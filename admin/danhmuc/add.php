@@ -22,8 +22,8 @@
           </div> -->
           <br>
           <div class="mb-3 ">
-            <input type="submit" class="" name="themmoi" value="Thêm">
-            <a href="index.php?act=listdm"><input class="mr20" type="button" value="Danh Sách"></a>
+            <input id="popUpYes" type="submit" class="" name="themmoi" value="Thêm">
+            <a href="index.php?act=listdm"><input id="popUpYess" class="mr20" type="button" value="Danh Sách"></a>
           </div>
           <?php if (isset($thongbao)): ?>
             <div class="alert alert-success">
