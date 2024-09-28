@@ -29,7 +29,35 @@
                     </div>
                     <div class="featured-product">
                         <div class="active-featured-product slick-arrow-2">
-                           
+                            <?php
+                            $i = 0;
+                            foreach ($dstop10 as $sp) {
+                                extract($sp);
+                                $hinh =  $img_path . $img;
+                                if (($i == 2) || ($i == 5) || ($i == 8)) {
+                                    $mr = "";
+                                } else {
+                                    $mr = "mr";
+                                }
+                                $linksp = "index.php?act=sanphamct&idsp=" . $id;
+
+                                echo '<div class="product-item product-item-2 ' . $mr . '">
+                             <div class="product-img">
+                                 <a href="' . $linksp . '">
+                                     <img src="' . $hinh . '" alt="" />
+                                 </a>
+                             </div>
+                             <div class="product-info">
+                                 <h6 class="product-title">
+                                     <a href="' . $linksp . '">' . $name . '</a>
+                                 </h6>
+                                 <h3 class="pro-price"> ' . number_format($price)   . 'đ</h3>
+                             </div>
+                            
+                         </div>';
+                                $i += 1;
+                            }
+                            ?>
                         </div>
 
                     </div>
@@ -65,7 +93,7 @@
                             <span>GIẢM GIÁ</span>
                         </div>
                         <div class="banner-img">
-                            <a href=""><img src="upload/Samsung Galaxy S23 Ultra.jpg" alt=""></a>
+                            <a href="index.php?act=sanphamct&idsp=19"><img src="upload/Samsung Galaxy S23 Ultra.jpg" alt=""></a>
                         </div>
 
                     </div>
@@ -90,7 +118,19 @@
                         <!-- popular-product start -->
                         <div id="popular-product" class="tab-pane active show">
                             <div class="row">
-                   
+                                <?php
+                                $i = 0;
+                                foreach ($spnew as $sp) :
+                                    extract($sp);
+                                    $hinh =  $img_path . $img;
+                                    if (($i == 2) || ($i == 5) || ($i == 8)) {
+                                        $mr = "";
+                                    } else {
+                                        $mr = "mr";
+                                    }
+                                    $linksp = "index.php?act=sanphamct&idsp=" . $id;
+
+                                ?>
                                     <div class="col-lg-3 col-md-4 <?php echo $mr ?>">
                                         <div class="product-item product-item-2 ">
                                             <div class="product-img">
@@ -100,15 +140,21 @@
                                             </div>
                                             <div class="product-info">
                                                 <h6 class="product-title">
+                                                    <a href="<?php echo $linksp ?>"><?php echo $name ?></a>
                                                 </h6>
                                 
-                                                <h3 class="pro-price">   </h3>
+                                                <h3 class="pro-price"> <?php echo number_format($price) ?> ₫ </h3>
                                                 <ul class="action-button" style="background-color: darkred;">
                                                     <button style="color: #fff;" data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price ?>)">Thêm vào giỏ hàng</button>
                                                 </ul>
                                             </div>
                                         </div>
-                          
+                                    </div>
+                                <?php
+                                    $i += 1;
+                                endforeach;
+                                ?>
+
                             </div>
                         </div>
                     </div>
@@ -128,5 +174,38 @@
 </section>
 <!-- END PAGE CONTENT -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<?php
+$isLoggedIn = isset($_SESSION['user']);
+?>
+<script>
+    let totalProduct = document.getElementById('totalProduct');
+    let isLoggedIn = <?php echo $isLoggedIn ? 'true' : 'false'; ?>;
 
+    function addToCart(productId, productName, productPrice) {
+        // Kiểm tra nếu người dùng đã đăng nhập
+
+        // Sử dụng jQuery
+        if (isLoggedIn) {
+            $.ajax({
+                type: 'POST',
+                // Đường dẫn tới tệp PHP xử lý dữ liệu
+                url: './clientt/addToCart.php',
+                data: {
+                    id: productId,
+                    name: productName,
+                    price: productPrice
+                },
+                success: function(response) {
+                    totalProduct.innerText = response;
+                    alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        } else {
+            alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng.');
+            window.location.href = 'index.php?act=dangnhap';
+        }
+    }
 </script>

@@ -28,6 +28,7 @@
     <!-- Style customizer (Remove these two lines please) -->
     <link rel="stylesheet" href="css/style-customizer.css">
     <link href="#" data-style="styles" rel="stylesheet">
+    
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
 
