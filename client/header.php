@@ -94,12 +94,7 @@
                                         </li>
                                         <li class="mega-parent"><a href="index.php?act=sanpham">Danh Sách Sản Phẩm</a>
                                         </li>
-                                        <?php
-                                        // Check if the user is logged in
-                                        if (isset($_SESSION['user'])) {
-                                            echo '<li class="mega-parent"><a href="index.php?act=mybill">Đơn Mua</a></li>';
-                                        }
-                                        ?>
+                                
                                     </ul>
                                 </nav>
                             </div>
@@ -120,6 +115,7 @@
                                                     </button>
                                                 </div>
                                             </form>
+                                            
                                         </div>
                                     </div>
                                     <!-- total-cart -->

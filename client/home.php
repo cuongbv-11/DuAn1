@@ -1,4 +1,4 @@
-<!-- START SLIDER AREA -->
+START SLIDER AREA
 <div class="slider-area youtube-bg bg-opacity-black-60 ptb-160 mb-80 section">
     <div class="container">
         <div class="row">
@@ -189,7 +189,11 @@ $isLoggedIn = isset($_SESSION['user']);
             $.ajax({
                 type: 'POST',
                 // Đường dẫn tới tệp PHP xử lý dữ liệu
+<<<<<<< HEAD
                 url: './clientt/addToCart.php',
+=======
+                url: './view/addToCart.php',
+>>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753
                 data: {
                     id: productId,
                     name: productName,

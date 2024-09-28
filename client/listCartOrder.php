@@ -163,14 +163,22 @@ if (isset($_GET['id'])) {
         // Gửi yêu cầu bằng ajax để cập nhật giỏ hàng
         $.ajax({
             type: 'POST',
+<<<<<<< HEAD
             url: './client/updateQuantity.php',
+=======
+            url: './view/updateQuantity.php',
+>>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753
             data: {
                 id: id,
                 quantity: newQuantity
             },
             success: function(response) {
                 // Sau khi cập nhật thành công
+<<<<<<< HEAD
                 $.post('client/tableCartOrder.php', function(data) {
+=======
+                $.post('view/tableCartOrder.php', function(data) {
+>>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753
                     $('#order').html(data);
                 })
             },
@@ -185,13 +193,21 @@ if (isset($_GET['id'])) {
             // Gửi yêu cầu bằng ajax để cập nhật giỏ hàng
             $.ajax({
                 type: 'POST',
+<<<<<<< HEAD
                 url: './client/removeFormCart.php',
+=======
+                url: './view/removeFormCart.php',
+>>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753
                 data: {
                     id: id
                 },
                 success: function(response) {
                     // Sau khi cập nhật thành công
+<<<<<<< HEAD
                     $.post('client/tableCartOrder.php', function(data) {
+=======
+                    $.post('view/tableCartOrder.php', function(data) {
+>>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753
                         $('#order').html(data);
                     })
                 },
