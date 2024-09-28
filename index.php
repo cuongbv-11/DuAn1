@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "model/pdo.php";
-<<<<<<< HEAD
 include "model/sanpham.php";
 include "model/danhmuc.php";
 include "client/header.php";
@@ -13,10 +12,6 @@ $spnew = loadall_sanpham_home();
 $dsdm = loadall_danhmuc();
 $dstop10 = loadall_sanpham_top10();
 $isLoggedIn = isset($_SESSION['user']);
-=======
-include "client/header.php";
-include "model/taikhoan.php";
->>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -107,7 +102,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case "buyNow":
             include "client/buyNow.php";
             break;
-<<<<<<< HEAD
         case "sanpham":
             if (isset($_POST['keyword']) &&  $_POST['keyword'] != "") {
                 $kyw = $_POST['keyword'];
@@ -141,8 +135,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 include "client/home.php";
             }
             break;
-=======
->>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753
         case 'dangky':
             if ((isset($_POST['dangky'])) && ($_POST['dangky'])) {
                 $email = $_POST['email'];
@@ -152,16 +144,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $tel = $_POST['tel'];
                 insert_taikhoan($email, $user, $pass, $address, $tel);
                 $thongbao = "Đã đăng ký thành công. Vui lòng đăng nhập tài khoản";
-<<<<<<< HEAD
-=======
-                echo '
-                <script>
-                    if (confirm("Bạn đã đăng ký thành công. Bạn có muốn đăng nhập ngay không?")) {
-                        window.location.href = "index.php?act=dangnhap";
-                    }
-                </script>';
-                exit();
->>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753
             }
             include "client/taikhoan/dangky.php";
             break;
@@ -216,7 +198,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             include "client/taikhoan/edit_taikhoan.php";
             break;
-<<<<<<< HEAD
         case 'thanhtoan':
             include "client/cart/thanhtoan.php";
             break;
@@ -239,14 +220,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
         default:
             include "client/home.php";
-=======
->>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753
     }
 } else {
     include "client/home.php";
 }
 include "client/footer.php";
-<<<<<<< HEAD
-
-=======
->>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753

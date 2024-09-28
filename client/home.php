@@ -189,11 +189,7 @@ $isLoggedIn = isset($_SESSION['user']);
             $.ajax({
                 type: 'POST',
                 // Đường dẫn tới tệp PHP xử lý dữ liệu
-<<<<<<< HEAD
-                url: './clientt/addToCart.php',
-=======
-                url: './view/addToCart.php',
->>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753
+                url: './client/addToCart.php',
                 data: {
                     id: productId,
                     name: productName,

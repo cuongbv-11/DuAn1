@@ -4,10 +4,6 @@ include "../model/pdo.php";
 include "../model/sanpham.php";
 include "../model/taikhoan.php";
 include "../model/danhmuc.php";
-<<<<<<< HEAD
-=======
-include "../model/order.php";
->>>>>>> 643e51cf0e74a24e7e9e7342dd058d29bfd01753
 include "../global.php";
 
 // Kiểm tra xem giỏ hàng có dữ liệu hay không
