@@ -39,6 +39,4 @@
       }
       ?>
   </form>
-  settings_applicationsádsdsa
-  ádsds
 </main>
