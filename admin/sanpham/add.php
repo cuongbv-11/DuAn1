@@ -1,49 +1,42 @@
-<div class="row2">
-  <div class="row2 font_title">
-    <h1>THÊM MỚI SẢN PHẨM</h1>
-  </div>
-  <div class="row2 form_content ">
-    <form action="index.php?act=addsp" method="POST" enctype="multipart/form-data">
-      <div class="row2 mb10 form_content_container">
-        <label>Danh mục </label>
-       <select name="iddm" id="">
+<main class="app-content ">
+  <br>  
+    <center><h1>THÊM MỚI SẢN PHẨM</h1></center>
+    <br> 
+    <br> 
+  <form action="index.php?act=addsp" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label class="form-label">Tên Sản Phẩm:</label>
+      <input type="text" name="tensp" placeholder="Nhập Tên Sản Phẩm" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Giá:</label>
+      <input type="number" name="giasp"  placeholder="Nhập Giá Sản Phẩm" class="form-control" required>
+    </div>
+    <div class="form-floating mb-3  ">
+      <select class="form-select" name="iddm" aria-label="Floating label select example">
         <?php
-        foreach ($listdanhmuc  as $danhmuc) {
+        foreach ($listdanhmuc as $danhmuc) {
           extract($danhmuc);
-         echo ' <option value="'.$id.'">'.$name.'</option>';
+          echo ' <option value="' . $id . '">' . $name . '</option>';
         }
         ?>
-       </select>
-      </div>
-      <div class="row2 mb10">
-        <label>Tên sản phẩm </label> <br>
-        <input type="text" name="tensp" placeholder="nhập vào tên">
-      </div>
-      <div class="row2 mb10">
-        <label>Giá </label> <br>
-        <input type="text" name="giasp" placeholder="nhập vào tên">
-      </div>
-      <div class="row2 mb10">
-        <label>Hình </label> <br>
-       <input type="file" name="hinh" id="">
-      </div>
-      <div class="row2 mb10">
-        <label>Mô tả </label> <br>
-        <textarea name="mota" id="" cols="30" rows="10"></textarea>
-      </div>
-      
-      <div class="row mb10 ">
-        <input class="mr20" type="submit" name="themmoi" value="THÊM MỚI">
-        <input class="mr20" type="reset" value="NHẬP LẠI">
-
-        <a href="index.php?act=listsp"><input class="mr20" type="button" value="DANH SÁCH"></a>
-      </div>
-      <?php
+      </select>
+      <label for="floatingSelect">Chọn Danh Mục:</label>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Hình Ảnh: </label>
+      <input class="form-control" type="file" name="hinh">
+    </div>
+    <div class="form-floating mb-3">
+      <textarea class="form-control" name="mota" style="height: 100px"></textarea>
+      <label for="floatingTextarea2">Mô Tả: </label>
+    </div>
+    <input id="popUpYes"  type="submit" name="themmoi" value="Thêm">
+    <a href="index.php?act=listsp"><input  id="popUpYes" type="button" value="Danh Sách Sản Phẩm"></a>
+    <?php
       if (isset($thongbao) && ($thongbao != "")) {
         echo $thongbao;
       }
       ?>
-    </form>
-  </div>
-</div>
-</div>
+  </form>
+</main>
