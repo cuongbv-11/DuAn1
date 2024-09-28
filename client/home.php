@@ -1,4 +1,4 @@
-START SLIDER AREA
+<!-- START SLIDER AREA -->
 <div class="slider-area youtube-bg bg-opacity-black-60 ptb-160 mb-80 section">
     <div class="container">
         <div class="row">
