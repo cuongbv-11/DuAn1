@@ -6,8 +6,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Main CSS-->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+   <!-- Main CSS-->
+   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="css/util.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -18,6 +18,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <!-- Custom fonts for this template-->
+   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -28,7 +38,7 @@
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
       <!-- User Menu-->
-      <li><a class="app-nav__item" href="../index.php?act=Thoat"><i class='bx bx-log-out bx-rotate-180'></i> Trở Về Trang Chủ</a>
+      <li><a class="app-nav__item" href="../index.php?act=Thoat"><i class='bx bx-log-out bx-rotate-180'></i> TRỞ VỀ TRANG WEB</a>
       </li>
     </ul>
   </header>
@@ -45,20 +55,18 @@
     <ul class="app-menu">
       <!-- <li><a class="app-menu__item haha" href="phan-mem-ban-hang.html"><i class='app-menu__icon bx bx-cart-alt'></i>
           <span class="app-menu__label">POS Bán Hàng</span></a></li> -->
-      <li><a class="app-menu__item  " href=""><i class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Quản lý Tài Khoản</span></a></li>
+      <li><a class="app-menu__item  " href="index.php?act=home"><i class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Home</span></a></li>
+      <li><a class="app-menu__item  " href="index.php?act=dskh"><i class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Quản lý Tài Khoản</span></a></li>
       <li><a class="app-menu__item" href="index.php?act=listsp"><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý sản phẩm</span></a>
       </li>
       <li><a class="app-menu__item" href="index.php?act=listdm"><i class='app-menu__icon bx bx-task'></i><span class="app-menu__label">Quản lý danh mục</span></a></li>
-      <li><a class="app-menu__item  " href=""><i class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Quản lý Đơn Đặt Hàng</span></a></li>
+      <li><a class="app-menu__item" href="index.php?act=listdh"><i class='app-menu__icon bx bx-task'></i><span class="app-menu__label">Quản lý Đơn Đặt Hàng</span></a></li>
+
+      <li><a class="app-menu__item" href="index.php?act=dsbl"><i class='app-menu__icon bx bx-run'></i><span class="app-menu__label">Bình luận
+          </span></a></li>
+      <li><a class="app-menu__item" href="index.php?act=thongke"><i class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Thống kê</span></a>
+      </li>
+
 
     </ul>
   </aside>
-  <br>
-<div class="row2">
-
-  <div class="row2 form_content ">
-    <div class="row2 mb10 form_content_container">
-      <h1>QUẢN TRỊ SẢN PHẨM</h1>
-    </div>
-  </div>
-</div>
