@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "model/pdo.php"; // Ensure this path is correct
-include "model/taikhoan.php"; // Ensure this path is correct
+include "model/pdo.php"; 
+include "model/taikhoan.php"; 
 
 if (isset($_SESSION['user'])) {
     header("Location: index.php");
