@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
     $pass = $_POST['pass'];
     $checkuser = check_user($user, $pass);
     if (is_array($checkuser)) {
-        $_SESSION['user'] = $checkuser;
+        $_SESSION['admin'] = $checkuser;
         header("Location: index.php");
         exit();
     } else {

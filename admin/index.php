@@ -7,19 +7,18 @@ include "./model/sanpham.php";
 include "./model/taikhoan.php";
 include "./model/donhang.php";
 
-// Check if the user is logged in
-if (!isset($_SESSION['user'])) {
+if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
     exit();
 }
 
-$userRole = $_SESSION['user']['role'];
+$userRole = $_SESSION['admin']['role'];
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
         case 'adddm':
-            // Only allow admins to add categories
+    
             if ($userRole == 1) {
                 if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                     $tenloai = $_POST['tenloai'];
@@ -106,9 +105,8 @@ if (isset($_GET['act'])) {
                     $target_dir = "../upload/";
                     $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
                     if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                        // File uploaded successfully
                     } else {
-                        // Error uploading file
+                   
                     }
                     insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm);
                     $thongbao = 'THÊM THÀNH CÔNG';
