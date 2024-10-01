@@ -3,6 +3,8 @@ include "header.php";
 include "./model/pdo.php";
 include "./model/danhmuc.php";
 include "./model/sanpham.php";
+include "./model/donhang.php";
+include "./model/taikhoan.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -131,6 +133,47 @@ if (isset($_GET['act'])) {
             $listsanpham = loadall_sanpham("", 0);
             include "sanpham/list.php";
             break;
+            case 'listdh':
+                $listdonhang = loadall_donhang();
+                include "donhang/list.php";
+                break;
+            case 'listctdh':
+                $listctdonhang = loadall_chitietdonhang();
+                include "chitiet/chitietdonhang.php";
+                break;
+            case 'xoadh':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_donhang($_GET['id']);
+                }
+                $listdonhang = loadall_donhang();
+                include "donhang/list.php";
+                break;
+            case 'updatebill':
+                if (isset($_GET['iddh']) && $_GET['iddh'] > 0) {
+                    $bill = loadone_bill($_GET['iddh']);
+                    }
+                if (isset($_POST['capnhatbill'])) {
+                    $trangthai = $_POST['trangthai'];
+                    $id = $_POST['id'];        
+                    update_bill($id, $trangthai);
+                    // Redirect to the list of orders after updating
+                    header("location:index.php?act=listdh");
+                    exit(); // Make sure to exit after header redirection
+                }
+                include "donhang/update.php";
+                break;
+            case "xoatk":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_taikhoan($_GET['id']);
+                }
+                $listtaikhoan = loadall_taikhoan();
+                include "taikhoan/list.php";
+                break;
+            case 'dskh':
+                $listtaikhoan = loadall_taikhoan();
+                include "taikhoan/list.php";
+                break;
+                    
     }
 include "home.php";
 }
