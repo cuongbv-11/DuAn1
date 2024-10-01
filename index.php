@@ -5,6 +5,8 @@ include "model/sanpham.php";
 include "model/danhmuc.php";
 include "client/header.php";
 include "model/taikhoan.php";
+include "model/order.php";
+
 include "global.php";
 
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
