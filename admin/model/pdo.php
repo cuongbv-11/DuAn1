@@ -61,21 +61,15 @@ function pdo_query($sql){
  * @return array mảng chứa bản ghi
  * @throws PDOException lỗi thực thi câu lệnh
  */
-function pdo_query_one($sql){
-    $sql_args = array_slice(func_get_args(), 1);
-    try{
-        $conn = pdo_get_connection();
-        $stmt = $conn->prepare($sql);
-        $stmt->execute($sql_args);
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $row;
+function pdo_query_one($sql, $params = [])
+{
+    $conn = pdo_get_connection();
+    $stmt = $conn->prepare($sql);
+    foreach ($params as $key => $value) {
+        $stmt->bindValue($key, $value);
     }
-    catch(PDOException $e){
-        throw $e;
-    }
-    finally{
-        unset($conn);
-    }
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 /**
  * Thực thi câu lệnh sql truy vấn một giá trị

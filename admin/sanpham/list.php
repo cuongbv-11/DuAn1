@@ -21,12 +21,11 @@
               <thead>
                 <tr>
                   <th width="10"><input type="checkbox" id="all"></th>
-                  <th>ID</th>
+                  <th>Mã sản phẩm</th>
                   <th>Tên sản phẩm</th>
                   <th>Ảnh</th>
                   <th>Giá tiền</th>
                   <th>Mô tả</th>
-                  <th>Danh Mục</th>
                   <th>Lượt xem</th>
                   <th>Chức năng</th>
                 </tr>
@@ -49,7 +48,6 @@
                  <td>' . $hinh . '</td>
                  <td>' .  number_format($price) . ' ₫</td>
                  <td>' . $mota . '</td>
-                 <td>' . $iddm . '</td>
                  <td>' . $luotxem . '</td>
                  <td><a href ="' . $xoasp . '"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
                                             onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>

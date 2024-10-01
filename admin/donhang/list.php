@@ -1,35 +1,35 @@
 <main class="app-content">
-    <div class="app-title">
-        <ul class="app-breadcrumb breadcrumb side">
-            <li class="breadcrumb-item active"><a href="#"><b>Danh Sách Đơn Hàng</b></a></li>
-        </ul>
-        <div id="clock"></div>
-    </div>
-    <form action="index.php?act=listdh" method="POST">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="tile">
-                    <div class="tile-body">
-                        <div class="row element-button">
-                        </div>
-                        <table class="table table-hover table-bordered" id="sampleTable">
-                            <thead>
-                                <tr>
-                                    <th width="10"><input type="checkbox" id="all"></th>
-                                    <th>ID</th>
-                                    <th>ID user</th>
-                                    <th>Họ tên</th>
-                                    <th>Sdt </th>
-                                    <th>Email</th>
-                                    <th>Địa Chỉ</th>
-                                    <th>Tổng tiền</th>
-                                    <th>Phương thức thanh toán</th>
-                                    <th>Trạng Thái</th>
-                                    <th>Chức Năng</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
+  <div class="app-title">
+    <ul class="app-breadcrumb breadcrumb side">
+      <li class="breadcrumb-item active"><a href="#"><b>Danh Sách Đơn Hàng</b></a></li>
+    </ul>
+    <div id="clock"></div>
+  </div>
+  <form action="index.php?act=listdh" method="POST">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          <div class="tile-body">
+            <div class="row element-button">
+            </div>
+            <table class="table table-hover table-bordered" id="sampleTable">
+              <thead>
+                <tr>
+                  <th width="10"><input type="checkbox" id="all"></th>
+                  <th>ID</th>
+                  <th>ID user</th>
+                  <th>Họ tên</th>
+                  <th>Sdt </th>
+                  <th>Email</th>
+                  <th>Địa Chỉ</th>
+                  <th>Tổng tiền</th>
+                  <th>Phương thức thanh toán</th>
+                  <th>Trạng Thái</th>
+                  <th>Chức Năng</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
                 foreach ($listdonhang as $dh) {
                   extract($dh);
                   $xoadh = "index.php?act=xoadh&id=" . $id;
@@ -61,14 +61,89 @@
               </tr>';
                 }
                 ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+              </tbody>
+            </table>
+          </div>
         </div>
-    </form>
+      </div>
+    </div>
+  </form>
 </main>
+
+
+<!--
+  MODAL
+-->
+<!-- <div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="form-group  col-md-12">
+              <span class="thong-tin-thanh-toan">
+                <h5>Chỉnh sửa thông tin sản phẩm cơ bản</h5>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label">Mã sản phẩm </label>
+              <input class="form-control" type="number" value="71309005">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label">Tên sản phẩm</label>
+              <input class="form-control" type="text" required value="Bàn ăn gỗ Theresa">
+            </div>
+            <div class="form-group  col-md-6">
+              <label class="control-label">Số lượng</label>
+              <input class="form-control" type="number" required value="20">
+            </div>
+            <div class="form-group col-md-6 ">
+              <label for="exampleSelect1" class="control-label">Tình trạng sản phẩm</label>
+              <select class="form-control" id="exampleSelect1">
+                <option>Còn hàng</option>
+                <option>Hết hàng</option>
+                <option>Đang nhập hàng</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label">Giá bán</label>
+              <input class="form-control" type="text" value="5.600.000">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="exampleSelect1" class="control-label">Danh mục</label>
+              <select class="form-control" id="exampleSelect1">
+                <option>Bàn ăn</option>
+                <option>Bàn thông minh</option>
+                <option>Tủ</option>
+                <option>Ghế gỗ</option>
+                <option>Ghế sắt</option>
+                <option>Giường người lớn</option>
+                <option>Giường trẻ em</option>
+                <option>Bàn trang điểm</option>
+                <option>Giá đỡ</option>
+              </select>
+            </div>
+          </div>
+          <BR>
+          <a href="#" style="    float: right;
+    font-weight: 600;
+    color: #ea0000;">Chỉnh sửa sản phẩm nâng cao</a>
+          <BR>
+          <BR>
+          <button class="btn btn-save" type="button">Lưu lại</button>
+          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+          <BR>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div> -->
+<!--
+MODAL
+-->
 
 <!-- Essential javascripts for application to work-->
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -85,9 +160,9 @@
 <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
 <script type="text/javascript">
-$('#sampleTable').DataTable();
-//Thời Gian
-function time() {
+  $('#sampleTable').DataTable();
+  //Thời Gian
+  function time() {
     var today = new Date();
     var weekday = new Array(7);
     weekday[0] = "Chủ Nhật";
@@ -108,24 +183,24 @@ function time() {
     s = checkTime(s);
     nowTime = h + " giờ " + m + " phút " + s + " giây";
     if (dd < 10) {
-        dd = '0' + dd
+      dd = '0' + dd
     }
     if (mm < 10) {
-        mm = '0' + mm
+      mm = '0' + mm
     }
     today = day + ', ' + dd + '/' + mm + '/' + yyyy;
     tmp = '<span class="date"> ' + today + ' - ' + nowTime +
-        '</span>';
+      '</span>';
     document.getElementById("clock").innerHTML = tmp;
     clocktime = setTimeout("time()", "1000", "Javascript");
 
     function checkTime(i) {
-        if (i < 10) {
-            i = "0" + i;
-        }
-        return i;
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
     }
-}
+  }
 </script>
 
 </body>

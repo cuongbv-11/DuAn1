@@ -1,34 +1,47 @@
 <?php
-function loadall_taikhoan()
+function insert_taikhoan($user, $pass, $email)
 {
-    $sql = "select * from taikhoan order by id desc";
-    $listtaikhoan = pdo_query($sql);
-    return $listtaikhoan;
-}
-function insert_taikhoan($email, $user, $pass, $address, $tel)
-{
-    $sql = "insert into taikhoan(email, user, pass , address ,tel,role) values('$email', '$user', '$pass','$address','$tel','2')";
-    pdo_execute($sql);
-}
-function delete_taikhoan($id)
-{
-    $sql = "DELETE FROM `taikhoan` WHERE id=" . $id;
+    $sql = "INSERT INTO taikhoan(user,pass,email) values ('$user','$pass','$email')";
     pdo_execute($sql);
 }
 function check_user($user, $pass)
 {
-    $sql = "select * from taikhoan where user='" . $user . "'AND pass='" . $pass . "'";
+    $sql = "SELECT * FROM taikhoan WHERE user = :user AND pass = :pass";
+    $params = [':user' => $user, ':pass' => $pass];
+    $sp = pdo_query_one($sql, $params);
+    return $sp;
+}   
+function  update_taikhoan($id, $user, $pass, $email, $address, $tel)
+{
+    $sql = "UPDATE taikhoan SET user='" . $user . "' ,pass='" . $pass . "',email='" . $email . "',address='" . $address . "',tel='" . $tel . "' WHERE id=" . $id;
+    pdo_execute($sql);
+}
+function checkemail($email)
+{
+    $sql = "SELECT *FROM taikhoan WHERE email='" . $email . "'";
     $sp = pdo_query_one($sql);
     return $sp;
 }
-function check_email($email)
+function loadall_taikhoan()
 {
-    $sql = "select * from taikhoan where email='" . $email . "'";
-    $sp = pdo_query_one($sql);
-    return $sp;
+    $sql = "SELECT * FROM taikhoan order by id desc";
+    $listtaikhoan = pdo_query($sql);
+    return $listtaikhoan;
 }
-function update_taikhoan($id, $user, $pass, $email, $address, $tel)
+function convertChucVu($chucVuNumber)
 {
-    $sql = "update taikhoan set user='" . $user . "', pass='" . $pass . "', email='" . $email . "', address='" . $address . "', tel='" . $tel . "' where id=" . $id;
+    switch ($chucVuNumber) {
+        case 1:
+            return 'Admin';
+        case 2:
+            return 'Khách Hàng';
+            // Thêm các trường hợp khác nếu cần
+        default:
+            return 'Chưa xác định';
+    }
+}
+function delete_taikhoan($id)
+{
+    $sql = "DELETE from taikhoan where id=" . $id;
     pdo_execute($sql);
 }

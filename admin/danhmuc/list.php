@@ -4,24 +4,27 @@
       <li class="breadcrumb-item active"><a href="#"><b>Danh sách danh mục</b></a></li>
     </ul>
     <div id="clock"></div>
-  </div>  
-  
+  </div>
+
+  <div class="row">
     <div class="col-md-12">
       <div class="tile">
         <div class="tile-body">
-          <div class=" element-button">
+
+          <div class="row element-button">
+            <div class="col-sm-2">
               <a class="btn btn-add btn-sm" href="index.php?act=adddm" title="Thêm"><i class="fas fa-plus"></i>
                 Tạo mới danh mục</a>
+            </div>
           </div>
-          <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0"
-            id="sampleTable">
+          <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0" id="sampleTable">
             <thead>
               <tr>
                 <th width="10"><input type="checkbox" id="all"></th>
-                <th width="10">ID</th>
-                <th width="150">Danh Mục</th>
+                <th>MÃ LOẠI</th>
+                <th width="150">TÊN DANH MỤC</th>
                 <th width="100">Trạng thái</th> <!-- Thêm tiêu đề cho cột trạng thái -->
-                <th width="100">Chức Năng</th>
+                <th width="100">Tính năng</th>
               </tr>
             </thead>
             <tbody>
@@ -57,28 +60,97 @@
         </div>
       </div>
     </div>
-
+  </div>
 </main>
 
 <script>
-  function updateTrangThai(id, trangthai) {
-    // Gửi yêu cầu AJAX để cập nhật trạng thái danh mục
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'index.php?act=updatetrangthai');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        console.log('Cập nhật trạng thái thành công');
-      } else {
-        console.log('Cập nhật trạng thái thất bại');
-      }
-    };
-    xhr.send('id=' + id + '&trangthai=' + trangthai);
-  }
+function updateTrangThai(id, trangthai) {
+  // Gửi yêu cầu AJAX để cập nhật trạng thái danh mục
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'index.php?act=updatetrangthai');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      console.log('Cập nhật trạng thái thành công');
+    } else {
+      console.log('Cập nhật trạng thái thất bại');
+    }
+  };
+  xhr.send('id=' + id + '&trangthai=' + trangthai);
+}
 </script>
 
 
 
+<!--
+  MODAL
+-->
+<div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="form-group  col-md-12">
+            <span class="thong-tin-thanh-toan">
+              <h5>Chỉnh sửa thông tin nhân viên cơ bản</h5>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label class="control-label">ID nhân viên</label>
+            <input class="form-control" type="text" required value="#CD2187" disabled>
+          </div>
+          <div class="form-group col-md-6">
+            <label class="control-label">Họ và tên</label>
+            <input class="form-control" type="text" required value="Võ Trường">
+          </div>
+          <div class="form-group  col-md-6">
+            <label class="control-label">Số điện thoại</label>
+            <input class="form-control" type="number" required value="09267312388">
+          </div>
+          <div class="form-group col-md-6">
+            <label class="control-label">Địa chỉ email</label>
+            <input class="form-control" type="text" required value="truong.vd2000@gmail.com">
+          </div>
+          <div class="form-group col-md-6">
+            <label class="control-label">Ngày sinh</label>
+            <input class="form-control" type="date" value="15/03/2000">
+          </div>
+          <div class="form-group  col-md-6">
+            <label for="exampleSelect1" class="control-label">Chức vụ</label>
+            <select class="form-control" id="exampleSelect1">
+              <option>Bán hàng</option>
+              <option>Tư vấn</option>
+              <option>Dịch vụ</option>
+              <option>Thu Ngân</option>
+              <option>Quản kho</option>
+              <option>Bảo trì</option>
+              <option>Kiểm hàng</option>
+              <option>Bảo vệ</option>
+              <option>Tạp vụ</option>
+            </select>
+          </div>
+        </div>
+        <BR>
+        <a href="#" style="    float: right;
+        font-weight: 600;
+        color: #ea0000;">Chỉnh sửa nâng cao</a>
+        <BR>
+        <BR>
+        <button class="btn btn-save" type="button">Lưu lại</button>
+        <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+        <BR>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+  MODAL
+-->
 
 <!-- Essential javascripts for application to work-->
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -98,6 +170,44 @@
   $('#sampleTable').DataTable();
 </script>
 <script>
+  function deleteRow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("myTable").deleteRow(i);
+  }
+  jQuery(function() {
+    jQuery(".trash").click(function() {
+      swal({
+          title: "Cảnh báo",
+
+          text: "Bạn có chắc chắn là muốn xóa nhân viên này?",
+          buttons: ["Hủy bỏ", "Đồng ý"],
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Đã xóa thành công.!", {
+
+            });
+          }
+        });
+    });
+  });
+  oTable = $('#sampleTable').dataTable();
+  $('#all').click(function(e) {
+    $('#sampleTable tbody :checkbox').prop('checked', $(this).is(':checked'));
+    e.stopImmediatePropagation();
+  });
+
+  //EXCEL
+  // $(document).ready(function () {
+  //   $('#').DataTable({
+
+  //     dom: 'Bfrtip',
+  //     "buttons": [
+  //       'excel'
+  //     ]
+  //   });
+  // });
+
 
   //Thời Gian
   function time() {
@@ -139,9 +249,28 @@
       return i;
     }
   }
+  //In dữ liệu
+
+  //     //Sao chép dữ liệu
+  //     var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
+
+  // copyTextareaBtn.addEventListener('click', function(event) {
+  //   var copyTextarea = document.querySelector('.js-copytextarea');
+  //   copyTextarea.focus();
+  //   copyTextarea.select();
+
+  //   try {
+  //     var successful = document.execCommand('copy');
+  //     var msg = successful ? 'successful' : 'unsuccessful';
+  //     console.log('Copying text command was ' + msg);
+  //   } catch (err) {
+  //     console.log('Oops, unable to copy');
+  //   }
+  // });
+
 
   //Modal
-  $("#show-emp").on("click", function () {
+  $("#show-emp").on("click", function() {
     $("#ModalUP").modal({
       backdrop: false,
       keyboard: false
