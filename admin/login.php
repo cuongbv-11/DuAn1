@@ -15,9 +15,15 @@ if (isset($_POST['login'])) {
     $pass = $_POST['pass'];
     $checkuser = check_user($user, $pass);
     if (is_array($checkuser)) {
-        $_SESSION['admin'] = $checkuser;
-        header("Location: index.php");
-        exit();
+        // Assuming $checkuser contains user information including their role
+        $role = $checkuser['role'];
+        if ($role == 1) {
+            $_SESSION['admin'] = $checkuser;
+            header("Location: index.php");
+            exit();
+        } else {
+            $loginError = 'Bạn không có quyền truy cập trang này';
+        }
     } else {
         $loginError = 'Invalid username or password';
     }

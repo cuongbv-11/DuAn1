@@ -50,10 +50,10 @@
     </div>
     <hr>
     <ul class="app-menu">
-      <!-- <li><a class="app-menu__item haha" href="phan-mem-ban-hang.html"><i class='app-menu__icon bx bx-cart-alt'></i>
-          <span class="app-menu__label">POS Bán Hàng</span></a></li> -->
-      <li><a class="app-menu__item  " href="index.php?act=home"><i class='app-menu__icon bx bx-id-card'></i> <span
-            class="app-menu__label">Home</span></a></li>
+    <li><a class="app-menu__item" href="index.php?act=thongke"><i
+            class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Trang chủ </span></a>
+      </li>
+
       <li><a class="app-menu__item  " href="index.php?act=dskh"><i class='app-menu__icon bx bx-id-card'></i> <span
             class="app-menu__label">Quản lý Tài Khoản</span></a></li>
       <li><a class="app-menu__item" href="index.php?act=listsp"><i
@@ -67,10 +67,7 @@
       <li><a class="app-menu__item" href="index.php?act=dsbl"><i class='app-menu__icon bx bx-run'></i><span
             class="app-menu__label">Bình luận
           </span></a></li>
-      <li><a class="app-menu__item" href="index.php?act=thongke"><i
-            class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Thống kê</span></a>
-      </li>
-
+   
 
     </ul>
   </aside>
