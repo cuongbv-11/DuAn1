@@ -1,5 +1,5 @@
 <!-- START SLIDER AREA -->
-<div class="slider-area youtube-bg bg-opacity-black-60 ptb-160 mb-80 section">
+<div class="slider-area youtube-bg bg-opacity-black-60 ptb-160 mb-20 section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -33,7 +33,7 @@
                             $i = 0;
                             foreach ($dstop10 as $sp) {
                                 extract($sp);
-                                $hinh =  $img_path . $img;
+                                $hinh = $img_path . $img;
                                 if (($i == 2) || ($i == 5) || ($i == 8)) {
                                     $mr = "";
                                 } else {
@@ -51,15 +51,24 @@
                                  <h6 class="product-title">
                                      <a href="' . $linksp . '">' . $name . '</a>
                                  </h6>
-                                 <h3 class="pro-price"> ' . number_format($price)   . 'đ</h3>
-                             </div>
+                                 <h3 class="pro-price"> ' . number_format($price) . 'đ</h3>
+                                </div>
+                                                    <div>
+                            <ul class="action-button" style="background-color: darkred;">
+                                <button style="color: #fff;" data-id="' . $id . '" class="btnCart"
+                                    onclick="addToCart(' . $id . ', ' . $name . ', ' . $price . ')">Thêm vào giỏ
+                                    hàng</button>
+                            </ul>
+                        </div>
                             
                          </div>';
                                 $i += 1;
-                            }
-                            ?>
-                        </div>
 
+                            }
+
+                            ?>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,7 +91,10 @@
                         <div class="up-comming-pro-info f-left">
                             <h3><a href="index.php?act=sanpham&iddm=3">XEM NGAY</a></h3>
                             <p>
-                                Các điện thoại iPhone là dòng sản phẩm điện thoại thông minh do Apple Inc. phát triển và sản xuất. Dòng điện thoại iPhone đã trở thành một trong những biểu tượng của thế giới công nghệ, với sự kết hợp giữa thiết kế đẹp mắt, hiệu suất mạnh mẽ và hệ điều hành iOS được tối ưu hóa. </p>
+                                Các điện thoại iPhone là dòng sản phẩm điện thoại thông minh do Apple Inc. phát triển và
+                                sản xuất. Dòng điện thoại iPhone đã trở thành một trong những biểu tượng của thế giới
+                                công nghệ, với sự kết hợp giữa thiết kế đẹp mắt, hiệu suất mạnh mẽ và hệ điều hành iOS
+                                được tối ưu hóa. </p>
 
                         </div>
                     </div>
@@ -93,7 +105,8 @@
                             <span>GIẢM GIÁ</span>
                         </div>
                         <div class="banner-img">
-                            <a href="index.php?act=sanphamct&idsp=19"><img src="upload/Samsung Galaxy S23 Ultra.jpg" alt=""></a>
+                            <a href="index.php?act=sanphamct&idsp=19"><img src="upload/Samsung Galaxy S23 Ultra.jpg"
+                                    alt=""></a>
                         </div>
 
                     </div>
@@ -120,9 +133,9 @@
                             <div class="row">
                                 <?php
                                 $i = 0;
-                                foreach ($spnew as $sp) :
+                                foreach ($spnew as $sp):
                                     extract($sp);
-                                    $hinh =  $img_path . $img;
+                                    $hinh = $img_path . $img;
                                     if (($i == 2) || ($i == 5) || ($i == 8)) {
                                         $mr = "";
                                     } else {
@@ -130,7 +143,7 @@
                                     }
                                     $linksp = "index.php?act=sanphamct&idsp=" . $id;
 
-                                ?>
+                                    ?>
                                     <div class="col-lg-3 col-md-4 <?php echo $mr ?>">
                                         <div class="product-item product-item-2 ">
                                             <div class="product-img">
@@ -142,15 +155,18 @@
                                                 <h6 class="product-title">
                                                     <a href="<?php echo $linksp ?>"><?php echo $name ?></a>
                                                 </h6>
-                                
                                                 <h3 class="pro-price"> <?php echo number_format($price) ?> ₫ </h3>
+                                            </div>
+                                            <div>
                                                 <ul class="action-button" style="background-color: darkred;">
-                                                    <button style="color: #fff;" data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price ?>)">Thêm vào giỏ hàng</button>
+                                                    <button style="color: #fff;" data-id="<?= $id ?>" class="btnCart"
+                                                        onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price ?>)">Thêm
+                                                        vào giỏ hàng</button>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
-                                <?php
+                                    <?php
                                     $i += 1;
                                 endforeach;
                                 ?>
@@ -195,11 +211,11 @@ $isLoggedIn = isset($_SESSION['user']);
                     name: productName,
                     price: productPrice
                 },
-                success: function(response) {
+                success: function (response) {
                     totalProduct.innerText = response;
                     alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
                 },
-                error: function(error) {
+                error: function (error) {
                     console.log(error);
                 }
             });
