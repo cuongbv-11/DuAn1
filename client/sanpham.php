@@ -18,11 +18,11 @@ $isLoggedIn = isset($_SESSION['user']);
                     name: productName,
                     price: productPrice
                 },
-                success: function(response) {
+                success: function (response) {
                     totalProduct.innerText = response;
                     alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
                 },
-                error: function(error) {
+                error: function (error) {
                     console.log(error);
                 }
             });
@@ -32,32 +32,32 @@ $isLoggedIn = isset($_SESSION['user']);
         }
     }
 
-   
+
 </script>
 <div id="page-content" class="page-wrapper section">
     <div class="shop-section mb-80">
-        <div class="container">
+        <div class="container mt-15">
             <div class="row">
                 <div class="col-lg-9 order-lg-1 order-1">
                     <div class="shop-content">
-                    
                         <div class="tab-content">
                             <div id="grid-view" class="tab-pane active show" role="tabpanel">
                                 <div class="row">
+
                                     <?php
                                     $i = 0;
-                                    foreach ($dssp as $sp) :
+                                    foreach ($dssp as $sp):
                                         extract($sp);
-                                        $hinh =  $img_path . $img;
+                                        $hinh = $img_path . $img;
                                         if (($i == 2) || ($i == 5) || ($i == 8)) {
                                             $mr = "";
                                         } else {
                                             $mr = "mr";
                                         }
                                         $linksp = "index.php?act=sanphamct&idsp=" . $id;
-                                    ?>
+                                        ?>
                                         <div class="col-lg-3 col-md-4 ' . $mr . '">
-                                            <div class="product-item">
+                                            <div class="product-item product-item-2 ">
                                                 <div class="product-img">
                                                     <a href="<?php echo $linksp ?>">
                                                         <img src="<?php echo $hinh ?>" alt="" />
@@ -67,15 +67,18 @@ $isLoggedIn = isset($_SESSION['user']);
                                                     <h6 class="product-title">
                                                         <a href="<?php echo $linksp ?>"><?php echo $name ?></a>
                                                     </h6>
-
                                                     <h3 class="pro-price"><?php echo number_format($price) ?> ₫</h3>
+                                                </div>
+                                                <div>
                                                     <ul class="action-button" style="background-color: darkred;">
-                                                        <button style="color: #fff;" data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price ?>)">Thêm vào giỏ hàng</button>
+                                                        <button style="color: #fff;" data-id="<?= $id ?>" class="btnCart"
+                                                            onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price ?>)">Thêm
+                                                            vào giỏ hàng</button>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php
+                                        <?php
                                         $i += 1;
                                     endforeach;
                                     ?>
@@ -123,7 +126,7 @@ $isLoggedIn = isset($_SESSION['user']);
                         $i = 0;
                         foreach ($dstop10 as $sp) {
                             extract($sp);
-                            $hinh =  $img_path . $img;
+                            $hinh = $img_path . $img;
                             if (($i == 2) || ($i == 5) || ($i == 8)) {
                                 $mr = "";
                             } else {
@@ -131,7 +134,7 @@ $isLoggedIn = isset($_SESSION['user']);
                             }
                             $linksp = "index.php?act=sanphamct&idsp=" . $id;
 
-                            echo '  <div class="product-item">
+                            echo '  <div class="product-item ">
                             <div class="product-img">
                                 <a href="' . $linksp . '">
                                     <img src="' . $hinh . '" alt="" />
