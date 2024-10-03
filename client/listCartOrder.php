@@ -1,3 +1,70 @@
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f8f8;
+            color: #555;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+    
+        button:hover {
+            background-color: #e53935;
+        }
+    </style>
+
 <?php
 
 if (session_status() == PHP_SESSION_NONE) {
@@ -22,7 +89,6 @@ if (isset($_GET['id'])) {
         echo '<p>Giá: ' . number_format($product['price'], 0, ",", ".") . ' đ</p>';
         echo '<p>Số lượng: ' . $product['quantity'] . '</p>';
         echo '<p>Tổng tiền: ' . number_format($product['price'] * $product['quantity'], 0, ",", ".") . ' đ</p>';
-        // You can add more details if needed
     } else {
         echo '<p>Sản phẩm không tồn tại.</p>';
     }
@@ -45,35 +111,29 @@ if (isset($_GET['id'])) {
                                         Giỏ Hàng
                                     </a>
                                 </li>
-
                             </ul>
                         </div>
                         <div class="col-lg-10">
-                            <!-- Tab panes -->
                             <div class="tab-content">
-                                <!-- shopping-cart start -->
                                 <div class="tab-pane active" id="shopping-cart">
                                     <div class="shopping-cart-content">
                                         <div class="table-content table-responsive mb-50">
                                             <table class="text-center">
                                                 <thead>
                                                     <tr align="center">
-                                                        
+                                                        <td>DANH SÁCH</td>
                                                         <td>STT</td>
-                                                        <td>ẢNH</td>
-                                                        <td>TÊN SẢN PHẨM</td>
-                                                        <td>GIÁ</td>
-                                                        <td>SỐ LƯỢNG</td>
-                                                        <td>TỔNG TIỀN</td>
-                                                        <td> CHỨC NĂNG</td>
-
+                                                        <td>ẢNH SẢN PHẨM</td>
+                                                        <td>TÊN SẢN PHẨM </td>
+                                                        <td>GIÁ </td>
+                                                        <td>SỐ LƯỢNG </td>
+                                                        <td>TỔNG TIỀN </td>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="order">
                                                     <?php
                                                     $sum_total = 0;
                                                     foreach ($dataDb as $key => $product) :
-                                                        // kiểm tra số lượng sản phẩm trong giỏ hàng
                                                         $quantityInCart = 0;
                                                         foreach ($_SESSION['cart'] as $item) {
                                                             if ($item['id'] == $product['id']) {
@@ -88,12 +148,12 @@ if (isset($_GET['id'])) {
                                                             </td>
                                                             <td><?= $key + 1 ?></td>
                                                             <td>
-                                                                <img src="<?= $img_path, $product['img'] ?>" alt="<?= $product['name']  ?>" style="width: 100px; height: auto">
+                                                                <img src="<?= $img_path . $product['img'] ?>" alt="<?= $product['name'] ?>" style="width: 100px; height: auto">
                                                             </td>
                                                             <td><?= $product['name'] ?></td>
-                                                            <td><?= number_format((int)$product['price'], 0, ",", ".")  ?> <u>đ</u></td>
+                                                            <td><?= number_format((int)$product['price'], 0, ",", ".") ?> <u>đ</u></td>
                                                             <td>
-                                                                <input type="number" value="<?= $quantityInCart ?>" min="1" id="quantity_<?= $product['id'] ?>" oninput="updateQuantity(<?= $product['id'] ?>, <?= $key ?>)">
+                                                            <input type="number" value="<?= $quantityInCart ?>" min="1" id="quantity_<?= $product['id'] ?>" oninput="updateQuantity(<?= $product['id'] ?>, <?= $key ?>)" max="100">
                                                             </td>
                                                             <td>
                                                                 <?= number_format((int)$product['price'] * (int)$quantityInCart, 0, ",", ".") ?> <u>đ</u>
@@ -101,49 +161,39 @@ if (isset($_GET['id'])) {
                                                             <td>
                                                                 <button onclick="removeFormCart(<?= $product['id'] ?>)">Xóa</button>
                                                             </td>
-
                                                         </tr>
                                                     <?php
-                                                        // Tính tổng giá đơn hàng
                                                         $sum_total += ((int)$product['price'] * (int)$quantityInCart);
-                                                        // Lưu tổng giá trị vào sesion
                                                         $_SESSION['resultTotal'] = $sum_total;
                                                     endforeach;
                                                     ?>
                                                     <tr>
-                                                        <td colspan="5" align="center">
+                                                        <td colspan ="5" align="center">
                                                             <h2>Tổng tiền hàng:</h2>
                                                         </td>
                                                         <td colspan="2" align="center">
                                                             <h2>
-                                                                <span>
-                                                                    <?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>đ</u>
+                                                                <span id="total-price">
+                                                                    <?= number_format((int)$sum_total, 0, ",", ".") ?> <u>đ</u>
                                                                 </span>
                                                             </h2>
                                                         </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
-
                                         </div>
                                         <form action="index.php?act=order" method="post">
                                             <div class="row">
                                                 <input type="submit" style="padding:10px;" name="order" value="Tiến hành thanh toán">
                                             </div>
-                                           
                                         </form>
-
                                     </div>
                                 </div>
-                                <!-- shopping-cart end -->
-                                <!-- wishlist start -->
-                                <!-- order-complete end -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- SHOP SECTION END -->
         </section>
 <?php
     }
@@ -152,37 +202,35 @@ if (isset($_GET['id'])) {
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
-    // hàm cập nhật số lượng
-    function updateQuantity(id, index) {
-        // lấy giá trị của ô input
-        let newQuantity = $('#quantity_' + id).val();
-        if (newQuantity <= 0) {
-            newQuantity = 1
-        }
-
-        // Gửi yêu cầu bằng ajax để cập nhật giỏ hàng
-        $.ajax({
-            type: 'POST',
-            url: './client/updateQuantity.php',
-            data: {
-                id: id,
-                quantity: newQuantity
-            },
-            success: function(response) {
-                // Sau khi cập nhật thành công
-                $.post('client/tableCartOrder.php', function(data) {
-                    $('#order').html(data);
-                })
-            },
-            error: function(error) {
-                console.log(error);
-            },
-        })
+   function updateQuantity(id, index) {
+    let newQuantity = $('#quantity_' + id).val();
+    if (newQuantity === '') {
+        newQuantity = 1;
+    } else if (newQuantity <= 0) {
+        newQuantity = 1;
     }
+
+    $.ajax({
+        type: 'POST',
+        url: './client/updateQuantity.php',
+        data: {
+            id: id,
+            quantity: newQuantity
+        },
+        success: function(response) {
+            $.post('client/tableCartOrder.php', function(data) {
+                $('#order').html(data);
+            });
+            $('#total-price').text(response + ' đ');
+        },
+        error: function(error) {
+            console.log(error);
+        },
+    });
+}
 
     function removeFormCart(id) {
         if (confirm("Bạn có đồng ý xóa sản phẩm hay không?")) {
-            // Gửi yêu cầu bằng ajax để cập nhật giỏ hàng
             $.ajax({
                 type: 'POST',
                 url: './client/removeFormCart.php',
@@ -190,20 +238,18 @@ if (isset($_GET['id'])) {
                     id: id
                 },
                 success: function(response) {
-                    // Sau khi cập nhật thành công
                     $.post('client/tableCartOrder.php', function(data) {
                         $('#order').html(data);
-                    })
+                    });
                 },
                 error: function(error) {
                     console.log(error);
                 },
-            })
+            });
         }
     }
 
     function processSelected() {
-        // Get selected product IDs
         const selectedProducts = $('input[name="selectedProducts[]"]:checked').map(function() {
             return this.value;
         }).get();
@@ -213,7 +259,6 @@ if (isset($_GET['id'])) {
             return;
         }
 
-        // Store selected product IDs in a session variable
         $.ajax({
             type: 'POST',
             url: 'store_selected_products.php',
@@ -221,7 +266,6 @@ if (isset($_GET['id'])) {
                 selectedProducts: selectedProducts
             },
             success: function(response) {
-                // Redirect to the order processing page
                 window.location.href = 'index.php?act=order';
             },
             error: function(error) {
