@@ -35,7 +35,7 @@
                     echo '<td><input type="checkbox" name="" id=""></td>
                  <td>' . $id . '</td>
                  <td>' . $user . '</td>
-                 <td>' . $pass . '</td>
+                 <td style="visibility: hidden">' . $pass . '</td>
                  <td>' . $email . '</td>
                  <td>' . $address. '</td>
                  <td>' . $tel . '</td>

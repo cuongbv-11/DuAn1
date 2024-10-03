@@ -99,8 +99,8 @@ if (isset($_GET['id'])) {
     } else {
         $shippingFee = 100;
 ?>
-        <section id="page-content" class="page-wrapper section">
-            <div class="shop-section mb-80">
+        <section id="page-content" class="">
+            <div class="shop-section mb-30">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-2">
@@ -118,7 +118,7 @@ if (isset($_GET['id'])) {
                                 <div class="tab-pane active" id="shopping-cart">
                                     <div class="shopping-cart-content">
                                         <div class="table-content table-responsive mb-50">
-                                            <table class="text-center">
+                                            <table class="text-center page-wrapper section">
                                                 <thead>
                                                     <tr align="center">
                                                         <td>STT</td>
