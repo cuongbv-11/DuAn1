@@ -121,7 +121,6 @@ if (isset($_GET['id'])) {
                                             <table class="text-center">
                                                 <thead>
                                                     <tr align="center">
-                                                        <td>DANH SÁCH</td>
                                                         <td>STT</td>
                                                         <td>ẢNH SẢN PHẨM</td>
                                                         <td>TÊN SẢN PHẨM </td>
@@ -143,9 +142,6 @@ if (isset($_GET['id'])) {
                                                         }
                                                     ?>
                                                         <tr align="center">
-                                                            <td>
-                                                                <input type="checkbox" name="selectedProducts[]" value="<?= $product['id'] ?>">
-                                                            </td>
                                                             <td><?= $key + 1 ?></td>
                                                             <td>
                                                                 <img src="<?= $img_path . $product['img'] ?>" alt="<?= $product['name'] ?>" style="width: 100px; height: auto">
@@ -212,13 +208,13 @@ if (isset($_GET['id'])) {
 
     $.ajax({
         type: 'POST',
-        url: './client/updateQuantity.php',
+        url: './view/updateQuantity.php',
         data: {
             id: id,
             quantity: newQuantity
         },
         success: function(response) {
-            $.post('client/tableCartOrder.php', function(data) {
+            $.post('view/tableCartOrder.php', function(data) {
                 $('#order').html(data);
             });
             $('#total-price').text(response + ' đ');
@@ -233,12 +229,12 @@ if (isset($_GET['id'])) {
         if (confirm("Bạn có đồng ý xóa sản phẩm hay không?")) {
             $.ajax({
                 type: 'POST',
-                url: './client/removeFormCart.php',
+                url: './view/removeFormCart.php',
                 data: {
                     id: id
                 },
                 success: function(response) {
-                    $.post('client/tableCartOrder.php', function(data) {
+                    $.post('view/tableCartOrder.php', function(data) {
                         $('#order').html(data);
                     });
                 },
