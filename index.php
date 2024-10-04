@@ -6,6 +6,7 @@ include "model/danhmuc.php";
 include "client/header.php";
 include "model/taikhoan.php";
 include "model/order.php";
+include "model/binhluan.php";
 
 include "global.php";
 

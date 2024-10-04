@@ -4,6 +4,7 @@ include "../model/pdo.php";
 include "../model/sanpham.php";
 include "../model/taikhoan.php";
 include "../model/danhmuc.php";
+include "../model/order.php";
 include "../global.php";
 
 // Kiểm tra xem giỏ hàng có dữ liệu hay không

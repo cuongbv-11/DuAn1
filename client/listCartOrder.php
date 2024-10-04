@@ -99,8 +99,8 @@ if (isset($_GET['id'])) {
     } else {
         $shippingFee = 100;
 ?>
-        <section id="page-content" class="">
-            <div class="shop-section mb-30">
+        <section id="page-content" class="page-wrapper section">
+            <div class="shop-section mb-80">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-2">
@@ -118,7 +118,7 @@ if (isset($_GET['id'])) {
                                 <div class="tab-pane active" id="shopping-cart">
                                     <div class="shopping-cart-content">
                                         <div class="table-content table-responsive mb-50">
-                                            <table class="text-center page-wrapper section">
+                                            <table class="text-center">
                                                 <thead>
                                                     <tr align="center">
                                                         <td>STT</td>
@@ -149,7 +149,7 @@ if (isset($_GET['id'])) {
                                                             <td><?= $product['name'] ?></td>
                                                             <td><?= number_format((int)$product['price'], 0, ",", ".") ?> <u>đ</u></td>
                                                             <td>
-                                                            <input type="number" value="<?= $quantityInCart ?>" min="1" id="quantity_<?= $product['id'] ?>" oninput="updateQuantity(<?= $product['id'] ?>, <?= $key ?>)" max="100">
+                                                            <input type="number" value="<?= $quantityInCart ?>" min="1" id="quantity_<?= $product['id'] ?>" oninput="updateQuantity(<?= $product['id'] ?>, <?= $key ?>)" max="10">
                                                             </td>
                                                             <td>
                                                                 <?= number_format((int)$product['price'] * (int)$quantityInCart, 0, ",", ".") ?> <u>đ</u>
@@ -208,13 +208,13 @@ if (isset($_GET['id'])) {
 
     $.ajax({
         type: 'POST',
-        url: './view/updateQuantity.php',
+        url: './client/updateQuantity.php',
         data: {
             id: id,
             quantity: newQuantity
         },
         success: function(response) {
-            $.post('view/tableCartOrder.php', function(data) {
+            $.post('client/tableCartOrder.php', function(data) {
                 $('#order').html(data);
             });
             $('#total-price').text(response + ' đ');
@@ -225,25 +225,38 @@ if (isset($_GET['id'])) {
     });
 }
 
-    function removeFormCart(id) {
-        if (confirm("Bạn có đồng ý xóa sản phẩm hay không?")) {
-            $.ajax({
-                type: 'POST',
-                url: './view/removeFormCart.php',
-                data: {
-                    id: id
-                },
-                success: function(response) {
-                    $.post('view/tableCartOrder.php', function(data) {
-                        $('#order').html(data);
-                    });
-                },
-                error: function(error) {
-                    console.log(error);
-                },
-            });
-        }
+function removeFormCart(id) {
+    if (confirm("Bạn có đồng ý xóa sản phẩm hay không?")) {
+        $.ajax({
+            type: 'POST',
+            url: './client/removeFormCart.php',
+            data: {
+                id: id
+            },
+            success: function(response) {
+                // Update the cart table
+                $.post('client/tableCartOrder.php', function(data) {
+                    $('#order').html(data);
+
+                    // Check if the cart is empty
+                    if ($('#order').children().length === 0) {
+                        $('h2#total-price').text('0 đ');
+                        $('input[name="order"]').prop('disabled', true);
+                        alert('Xóa thành công');
+                    } else {
+                        // Update the total price
+                        $.post('client/calculateTotalPrice.php', function(total) {
+                            $('#total-price').text(total + ' đ');
+                        });
+                    }
+                });
+            },
+            error: function(error) {
+                console.log(error);
+            },
+        });
     }
+}
 
     function processSelected() {
         const selectedProducts = $('input[name="selectedProducts[]"]:checked').map(function() {

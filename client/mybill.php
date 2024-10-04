@@ -1,3 +1,17 @@
+<?php
+// Initialize total order amount
+$totalOrderAmount = 0;
+$shippingFee = 15000; // Define the shipping fee
+
+// Calculate the total for each item in the order
+foreach ($lishdh as $bill) {
+    $itemTotal = $bill['giamua'] * $bill['soluong'];
+    $totalOrderAmount += $itemTotal;
+}
+
+// Store the total in the session for consistency
+$_SESSION['resultTotal'] = $totalOrderAmount;
+?>
 
 <section id="page-content" class="page-wrapper section">
     <div class="shop-section mb-80">
@@ -21,7 +35,6 @@
                                     <table class="text-center">
                                         <thead>
                                             <tr align="center">
-
                                                 <th>Tên sản phẩm</th>
                                                 <th>Hình ảnh</th>
                                                 <th>Đơn Giá</th>
@@ -35,18 +48,28 @@
                                                 $hinh = $img_path . $bill['img'];
                                                 $trangthai = $bill['trangthai'];
                                                 $ttdh = get_ttdh($trangthai);
-                                                $shippingFee = 15000;
+                                                $deleteLink = "index.php?act=deleteItem&id=" . $bill['id']; // Assuming 'id' is the unique identifier
                                             ?>
                                                 <tr align="center">
-
                                                     <td><?php echo $bill['pro_name'] ?><br></td>
-                                                    <td><img src="<?php echo $hinh ?>" alt="" width="200px" ;></td>
+                                                    <td><img src="<?php echo $hinh ?>" alt="" width="200px"></td>
                                                     <td><?php echo number_format($bill['giamua']) ?> đ</td>
                                                     <td><?php echo $bill['soluong'] ?></td>
-                                                    <td><?php echo number_format($bill['thanhtien'] + $shippingFee, 0, ",", ".");  ?> đ</td>
+                                                    <td><?php echo number_format($bill['giamua'] * $bill['soluong'], 0, ",", "."); ?> đ</td>
                                                     <td><?php echo $ttdh ?></td>
+                                                 
                                                 </tr>
                                             <?php } ?>
+                                            <tr>
+                                                <td colspan="4" align="right"><strong>Phí vận chuyển:</strong></td>
+                                                <td><?php echo number_format($shippingFee, 0, ",", "."); ?> đ</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" align="right"><strong>Tổng tiền:</strong></td>
+                                                <td><?php echo number_format($totalOrderAmount + $shippingFee, 0, ",", "."); ?> đ</td>
+                                                <td></td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>

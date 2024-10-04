@@ -11,11 +11,11 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="img/icon/favicon.png">
     <!-- All CSS Files -->
-    <!-- Bootstrap fremwork main css -->
+    <!-- Bootstrap framework main css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Nivo-slider css -->
     <link rel="stylesheet" href="lib/css/nivo-slider.css">
-    <!-- This core.css file contents all plugings css file. -->
+    <!-- This core.css file contents all plugins css file. -->
     <link rel="stylesheet" href="css/core.css">
     <!-- Theme shortcodes/elements style -->
     <link rel="stylesheet" href="css/shortcode/shortcodes.css">
@@ -28,7 +28,6 @@
     <!-- Style customizer (Remove these two lines please) -->
     <link rel="stylesheet" href="css/style-customizer.css">
     <link href="#" data-style="styles" rel="stylesheet">
-    
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
 
@@ -61,12 +60,7 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="top-link clearfix">
                                 <ul class="link f-right">
-                                    <li>
-                                        <a href="index.php?act=dangnhap">
-                                            <i class="zmdi zmdi-lock"></i>
-                                            Tài Khoản
-                                        </a>
-                                    </li>
+                                    <!-- Removed the Tài Khoản link from here -->
                                 </ul>
                             </div>
                         </div>
@@ -90,11 +84,15 @@
                             <div class="col-lg-8 d-none d-lg-block">
                                 <nav id="primary-menu">
                                     <ul class="main-menu text-center">
-                                        <li><a href="index.php">Trang Chủ</a>
-                                        </li>
-                                        <li class="mega-parent"><a href="index.php?act=sanpham">Danh Sách Sản Phẩm</a>
-                                        </li>
-                                
+                                        <li><a href="index.php">Trang Chủ</a></li>
+                                        <li class="mega-parent"><a href="index.php?act=sanpham">Danh Sách Sản Phẩm</a></li>
+                                        <?php
+                                        // Check if the user is logged in
+                                        if (isset($_SESSION['user'])) {
+                                            echo '<li class="mega-parent"><a href="index.php?act=mybill">Đơn Mua</a></li>';
+                                        }
+                                        ?>
+                                        <li><a href="index.php?act=dangnhap"><i class="zmdi zmdi-lock"></i> Tài Khoản</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -115,7 +113,6 @@
                                                     </button>
                                                 </div>
                                             </form>
-                                            
                                         </div>
                                     </div>
                                     <!-- total-cart -->
