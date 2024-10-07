@@ -9,14 +9,13 @@
     <div class="col-md-12">
       <div class="tile">
         <div class="tile-body">
-          <div class="row element-button">
+          <div class="row">
             <div class="col-sm-2">
               <a class="btn btn-add btn-sm" href="index.php?act=adddm" title="Thêm"><i class="fas fa-plus"></i>
                 Tạo mới danh mục</a>
             </div>
           </div>
-          <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0"
-            id="sampleTable">
+          <table class="table table-hover " style="width: 100%">
             <thead>
               <tr>
                 <th width="10"><input type="checkbox" id="all"></th>
