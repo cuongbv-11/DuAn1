@@ -46,10 +46,14 @@
                  <td>' . $name . '</td>
                  <td>' . $trangthai_options . '</td> <!-- Hiển thị trạng thái danh mục -->
                  <td class="table-td-center">
-                    <a href ="' . $xoadm . '"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
-                      onclick="myFunction(this)"><i class="fas fa-trash-alt"></i></button></a>
-                    <a href ="' . $suadm . '"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp"
-                      data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
+                     <a href="' . $suadm . '" class="btn btn-warning"
+                    ><i class="far fa-edit" type="button"
+                    onclick="myFunction(this)"></i> Sửa</a
+                  >
+                  <a href="' . $xoadm . '" class="btn btn-danger"
+                    ><i class="far fa-trash-alt"  type="button" id="show-emp" data-toggle="modal"
+                    data-target="#ModalUP"></i> Xóa</a
+                  >
                   </td>
                 </tr>';
               }

@@ -1,3 +1,4 @@
+
 <main class="app-content">
   <class="row">
     <div class="col-md-12">
@@ -16,17 +17,17 @@
                     Vui lòng nhập tên danh mục!
                   </div>
                 </div>
-                <div class="col-md-3 mb-3">
-                  <label class="form-label">Trạng Thái:</label>
-                  <select class="form-select" required>
-                    <option selected disabled value="">Chọn...</option>
-                    <option value="0"' . ($trangthai == 0 ? ' selected' : '' ) . '>Hoạt Động</option>
-                    <option value="1"' . ($trangthai==1 ? ' selected' : '' ) . '>Không Hoạt Động</option>
-                    </select>' <div class="invalid-feedback">
-                      Vui lòng chọn!
+                <!-- <div class="mb-4">
+                <label class="form-label">Trạng Thái:</label>
+                <select class="form-select" name="trangthai" required>
+                  <option selected disabled value="">---Vui Lòng Chọn---</option>
+                </select>
+                <div class="invalid-feedback">
+                      Vui lòng chọn danh mục!
                 </div>
-            </div>
-            <div class="col-12 form_content">
+              </div>
+            </div> -->
+            <div class="form_content">
               <input class="a" style="background-color: rgb(0,0,255)" name="themmoi" type="submit"
                 value="Thêm Danh Mục">
               <a href="index.php?act=listdm"><input type="button" value="Danh Sách Danh Mục"></a>
