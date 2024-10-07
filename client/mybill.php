@@ -12,8 +12,8 @@ foreach ($lishdh as $bill) {
 // Store the total in the session for consistency
 $_SESSION['resultTotal'] = $totalOrderAmount;
 ?>
-
 <section id="page-content" class="page-wrapper section">
+    <br>
     <div class="shop-section mb-80">
         <div class="container">
             <div class="row">

@@ -25,6 +25,7 @@ if (isset($_GET['act'])) {
                     insert_danhmuc($tenloai);
                     $thongbao = 'THÊM THÀNH CÔNG';
                 }
+                $listdanhmuc = loadall_danhmuc();
                 include "danhmuc/add.php";
             } else {
                 echo "Access denied!";

@@ -10,24 +10,22 @@
       <div class="col-md-12">
         <div class="tile">
           <div class="tile-body">
-            <div class="row element-button">
+            <div class="row">
               <div class="col-sm-2">
                 <a class="btn btn-add btn-sm" href="index.php?act=addsp" title="Thêm"><i class="fas fa-plus"></i>
                   Tạo mới sản phẩm</a>
               </div>
-
             </div>
-            <table class="table table-hover table-bordered" id="sampleTable">
+            <table class="table table-hover " style="width: 100%">
               <thead>
-                <tr>
-                  <th width="10"><input type="checkbox" id="all"></th>
-                  <th>Mã sản phẩm</th>
-                  <th>Tên sản phẩm</th>
-                  <th>Ảnh</th>
-                  <th>Giá tiền</th>
-                  <th>Mô tả</th>
-                  <th>Lượt xem</th>
-                  <th>Chức năng</th>
+                <tr >
+                  <th width="50">#</th>
+                  <th width="150">Tên Sản Phẩm</th>
+                  <th width="100">Hình Ảnh</th>
+                  <th>Giá</th>
+                  <th width="500">Mô Tả</th>
+                  <th>Lượt Xem</th>
+                  <th>Chức Năng</th>
                 </tr>
               </thead>
               <tbody>
@@ -38,25 +36,29 @@
                   $xoasp = "index.php?act=xoasp&id=" . $id;
                   $hinhpath = "../upload/" . $img;
                   if (is_file($hinhpath)) {
-                    $hinh = "<img src ='" . $hinhpath . "' height='80'>";
+                    $hinh = "<img src ='" . $hinhpath . "' alt='" . $name . "' width='80'>";
                   } else {
                     $hinh = 'no photo';
                   }
-                  echo '<td><input type="checkbox" name="" id=""></td>
-                 <td>' . $id . '</td>
-                 <td>' . $name . '</td>
-                 <td>' . $hinh . '</td>
-                 <td>' .  number_format($price) . ' ₫</td>
-                 <td>' . $mota . '</td>
-                 <td>' . $luotxem . '</td>
-                 <td><a href ="' . $xoasp . '"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
-                                            onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>
-                                        </button></a>
-                                        <a href ="' . $suasp . '"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal"
-                      data-target="#ModalUP"><i class="fas fa-edit"></i></button><a href ="' . $suasp . '">
-                                      
-                                    </td>
-             </tr>';
+                  echo '
+              <tr>
+                <td>' . $id . '</td>
+                <td>' . $name . '</td>
+                <td>' . $hinh . '</td>
+                <td>' . number_format($price) . ' ₫</td>
+                <td ><p rows="3" >' . $mota . '</p></td>
+                <td><center>' . $luotxem . '</center></td>
+                <td>
+                  <a href="' . $suasp . '" class="btn btn-warning"
+                    ><i class="far fa-edit" type="button"
+                    onclick="myFunction(this)"></i> Sửa</a
+                  >
+                  <a href="' . $xoasp . '" class="btn btn-danger"
+                    ><i class="far fa-trash-alt"  type="button" id="show-emp" data-toggle="modal"
+                    data-target="#ModalUP"></i> Xóa</a
+                  >
+                </td>
+              </tr>';
                 }
                 ?>
               </tbody>
