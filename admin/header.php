@@ -26,7 +26,7 @@
   .a:hover{
     color: yellow;
   }
-  .b:hover{
+  .b  :hover{
     color: white;
   }
 </style>
