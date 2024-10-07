@@ -5,26 +5,25 @@
     </ul>
     <div id="clock"></div>
   </div>
-
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
         <div class="tile-body">
-
           <div class="row element-button">
             <div class="col-sm-2">
               <a class="btn btn-add btn-sm" href="index.php?act=adddm" title="Thêm"><i class="fas fa-plus"></i>
                 Tạo mới danh mục</a>
             </div>
           </div>
-          <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0" id="sampleTable">
+          <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0"
+            id="sampleTable">
             <thead>
               <tr>
                 <th width="10"><input type="checkbox" id="all"></th>
-                <th>MÃ LOẠI</th>
-                <th width="150">TÊN DANH MỤC</th>
-                <th width="100">Trạng thái</th> <!-- Thêm tiêu đề cho cột trạng thái -->
-                <th width="100">Tính năng</th>
+                <th width="100">MÃ LOẠI</th>
+                <th>TÊN DANH MỤC</th>
+                <th width="150">Trạng thái</th> <!-- Thêm tiêu đề cho cột trạng thái -->
+                <th width="150">Tính năng</th>
               </tr>
             </thead>
             <tbody>
@@ -37,8 +36,8 @@
                 // Hiển thị trạng thái danh mục dưới dạng dropdown
                 $trangthai_options = '
                   <select class="form-control" onchange="updateTrangThai(' . $id . ', this.value)">
-                    <option value="0"' . ($trangthai == 0 ? ' selected' : '') . '>HĐ</option>
-                    <option value="1"' . ($trangthai == 1 ? ' selected' : '') . '>Không hoạt động</option>
+                    <option value="0"' . ($trangthai == 0 ? ' selected' : '') . '>Hoạt Động</option>
+                    <option value="1"' . ($trangthai == 1 ? ' selected' : '') . '>Không Hoạt Động</option>
                   </select>';
 
                 echo '<tr>
@@ -64,20 +63,20 @@
 </main>
 
 <script>
-function updateTrangThai(id, trangthai) {
-  // Gửi yêu cầu AJAX để cập nhật trạng thái danh mục
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'index.php?act=updatetrangthai');
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      console.log('Cập nhật trạng thái thành công');
-    } else {
-      console.log('Cập nhật trạng thái thất bại');
-    }
-  };
-  xhr.send('id=' + id + '&trangthai=' + trangthai);
-}
+  function updateTrangThai(id, trangthai) {
+    // Gửi yêu cầu AJAX để cập nhật trạng thái danh mục
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'index.php?act=updatetrangthai');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        console.log('Cập nhật trạng thái thành công');
+      } else {
+        console.log('Cập nhật trạng thái thất bại');
+      }
+    };
+    xhr.send('id=' + id + '&trangthai=' + trangthai);
+  }
 </script>
 
 
@@ -85,7 +84,8 @@ function updateTrangThai(id, trangthai) {
 <!--
   MODAL
 -->
-<div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+<div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+  data-keyboard="false">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
 
@@ -174,14 +174,14 @@ function updateTrangThai(id, trangthai) {
     var i = r.parentNode.parentNode.rowIndex;
     document.getElementById("myTable").deleteRow(i);
   }
-  jQuery(function() {
-    jQuery(".trash").click(function() {
+  jQuery(function () {
+    jQuery(".trash").click(function () {
       swal({
-          title: "Cảnh báo",
+        title: "Cảnh báo",
 
-          text: "Bạn có chắc chắn là muốn xóa nhân viên này?",
-          buttons: ["Hủy bỏ", "Đồng ý"],
-        })
+        text: "Bạn có chắc chắn là muốn xóa nhân viên này?",
+        buttons: ["Hủy bỏ", "Đồng ý"],
+      })
         .then((willDelete) => {
           if (willDelete) {
             swal("Đã xóa thành công.!", {
@@ -192,7 +192,7 @@ function updateTrangThai(id, trangthai) {
     });
   });
   oTable = $('#sampleTable').dataTable();
-  $('#all').click(function(e) {
+  $('#all').click(function (e) {
     $('#sampleTable tbody :checkbox').prop('checked', $(this).is(':checked'));
     e.stopImmediatePropagation();
   });
@@ -270,7 +270,7 @@ function updateTrangThai(id, trangthai) {
 
 
   //Modal
-  $("#show-emp").on("click", function() {
+  $("#show-emp").on("click", function () {
     $("#ModalUP").modal({
       backdrop: false,
       keyboard: false
