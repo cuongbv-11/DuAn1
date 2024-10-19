@@ -3,6 +3,7 @@ session_start();
 include "model/pdo.php"; 
 include "model/taikhoan.php"; 
 
+
 if (isset($_SESSION['user'])) {
     header("Location: index.php");
     exit();
@@ -15,7 +16,6 @@ if (isset($_POST['login'])) {
     $pass = $_POST['pass'];
     $checkuser = check_user($user, $pass);
     if (is_array($checkuser)) {
-        // Assuming $checkuser contains user information including their role
         $role = $checkuser['role'];
         if ($role == 1) {
             $_SESSION['admin'] = $checkuser;
@@ -77,21 +77,49 @@ if (isset($_POST['login'])) {
         .error-message {
             color: red;
             font-size: 12px;
-            margin-top: 10px;
+            margin-top: 5px;
         }
     </style>
+    <script>
+        function validateForm() {
+            var username = document.getElementById('user').value.trim();
+            var password = document.getElementById('pass').value.trim();
+            var usernameError = document.getElementById('usernameError');
+            var passwordError = document.getElementById('passwordError');
+            
+            // Clear previous error messages
+            usernameError.innerHTML = '';
+            passwordError.innerHTML = '';
+
+            var isValid = true;
+
+            if (username.length < 3) {
+                usernameError.textContent = 'Username phải tối thiểu  hơn 3 ký tự';
+                isValid = false;
+            }
+
+            if (password.length < 6) {
+                passwordError.textContent = 'Password phải tối thiểu 6 ký tự';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
 </head>
 <body>
     <div class="login-form">
         <h2>Login Admin</h2>
-        <form method="post" action="login.php">
+        <form method="post" action="login.php" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="user">Username:</label>
-                <input type="text" id="user" name="user" class="form-control" required>
+                <input type="text" id="user" name="user" class="form-control" minlength="3" title="Username phải tối thiểu  hơn 3 ký tự">
+                <div id="usernameError" class="error-message"></div>
             </div>
             <div class="form-group">
                 <label for="pass">Password:</label>
-                <input type="password" id="pass" name="pass" class="form-control" required>
+                <input type="password" id="pass" name="pass" class="form-control" minlength="6" title="Password phải tối thiểu 6 ký tự">
+                <div id="passwordError" class="error-message"></div>
             </div>
             <input type="submit" name="login" value="Login" class="btn">
             <?php if ($loginError): ?>

@@ -6,6 +6,8 @@ include "./model/danhmuc.php";
 include "./model/sanpham.php";
 include "./model/taikhoan.php";
 include "./model/donhang.php";
+include "./model/binhluan.php";
+include "./model/thongke.php";
 
 if (!isset($_SESSION['admin'])) {
     header("Location: login.php");
@@ -14,18 +16,34 @@ if (!isset($_SESSION['admin'])) {
 
 $userRole = $_SESSION['admin']['role'];
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_GET['act'])) {
+        $act = $_GET['act'];
+        switch ($act) {
+            case 'updatetrangthai':
+                if ($userRole == 1) {
+                    $id = $_POST['id'];
+                    $trangthai = $_POST['trangthai'];
+                    $result = update_danhmuc_trangthai($id, $trangthai);
+                    echo $result ? 'success' : 'error';
+                } else {
+                    echo 'Access denied!';
+                }
+                exit(); // Exit to prevent further output
+        }
+    }
+}
+
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
         case 'adddm':
-    
             if ($userRole == 1) {
                 if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                     $tenloai = $_POST['tenloai'];
                     insert_danhmuc($tenloai);
                     $thongbao = 'THÊM THÀNH CÔNG';
                 }
-                $listdanhmuc = loadall_danhmuc();
                 include "danhmuc/add.php";
             } else {
                 echo "Access denied!";
@@ -78,7 +96,7 @@ if (isset($_GET['act'])) {
             break;
         case 'dangnhap':
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
-                $user = $_POST['user'];
+                $user = $_POST[' user'];
                 $pass = $_POST['pass'];
                 $checkuser = check_user($user, $pass);
                 if (is_array($checkuser)) {
@@ -287,3 +305,4 @@ if (isset($_GET['act'])) {
         include "home.php";
     }
     include "footer.php";
+?>

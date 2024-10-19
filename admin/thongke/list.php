@@ -1,3 +1,169 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu đồ PHP</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .row2 {
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        .font_title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form_content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .table th, .table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f8f8f8;
+            font-weight: bold;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .tile {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .element-button {
+            margin-bottom: 20px;
+        }
+
+        .element-button a input {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .element-button a input:hover {
+            background-color: #0056b3;
+        }
+
+        tfoot td {
+            font-weight: bold;
+            background-color: #f8f8f8;
+        }
+
+        #clock {
+            font-size: 18px;
+            color: #333;
+            margin-top: 10px;
+            text-align: right;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .row2 {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 300px; /* Adjust width as needed */
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .font_title {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="form_content">
+            <div class="mb10 formds_loai">
+                <canvas id="myChart" width="350px" height="200px"></canvas>
+                <script>
+                    var labels = [];
+                    var dataValues = [];
+                    <?php foreach ($listthongke as $thongke) : ?>
+                        labels.push("<?php echo $thongke['tendm']; ?>");
+                        dataValues.push(<?php echo $thongke['countsp']; ?>);
+                    <?php endforeach; ?>
+                    var data = {
+                        labels: labels,
+                        datasets: [{
+                            label: "Số lượng sản phẩm",
+                            backgroundColor: ["red", "green", "blue", "orange", "brown"],
+                            data: dataValues
+                        }]
+                    };
+                    // Lấy thẻ canvas và vẽ biểu đồ
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: data,
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
 <main class="app-content">
     <div class="app-title">
         <ul class="app-breadcrumb breadcrumb side">
@@ -5,14 +171,10 @@
         </ul>
         <div id="clock"></div>
     </div>
-
     <div class="row">
         <div class="col-md-12">
             <div class="tile">
-                <div class="tile-body">
-                    <div class="row element-button">
-                        <a href="index.php?act=bieudo"> <input class="mr20" type="button" value="Xem biểu đồ"></a>
-                    </div>
+              
                     <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0" id="sampleTable">
                         <thead>
                             <tr>
