@@ -19,13 +19,13 @@
             <table class="table table-hover " style="width: 100%">
               <thead>
                 <tr >
-                  <th width="50">#</th>
-                  <th width="150">Tên Sản Phẩm</th>
-                  <th width="100">Hình Ảnh</th>
-                  <th>Giá</th>
-                  <th width="500">Mô Tả</th>
-                  <th>Lượt Xem</th>
-                  <th>Chức Năng</th>
+                  <th scope="col">#</th>
+                  <th scope="col">Tên Sản Phẩm</th>
+                  <th scope="col">Hình Ảnh</th>
+                  <th scope="col">Giá</th>
+                  <th scope="col">Mô Tả</th>
+                  <th scope="col">Lượt Xem</th>
+                  <th scope="col">Chức Năng</th>
                 </tr>
               </thead>
               <tbody>
@@ -43,9 +43,9 @@
                   echo '
               <tr>
                 <td>' . $id . '</td>
-                <td>' . $name . '</td>
+                <td><strong>' . $name . '</strong></td>
                 <td>' . $hinh . '</td>
-                <td>' . number_format($price) . ' ₫</td>
+                <td>' . number_format($price) . '</td>
                 <td ><p rows="3" >' . $mota . '</p></td>
                 <td><center>' . $luotxem . '</center></td>
                 <td>

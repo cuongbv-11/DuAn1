@@ -18,11 +18,10 @@
           <table class="table table-hover " style="width: 100%">
             <thead>
               <tr>
-                <th width="10"><input type="checkbox" id="all"></th>
-                <th width="100">MÃ LOẠI</th>
+                <th width="100">#</th>
                 <th>TÊN DANH MỤC</th>
                 <!-- <th width="150">Trạng thái</th> Thêm tiêu đề cho cột trạng thái -->
-                <th width="150">Tính năng</th>
+                <th width="150">Chức năng</th>
               </tr>
             </thead>
             <tbody>
@@ -40,7 +39,6 @@
                 //   </select>';
 
                 echo '<tr>
-                 <td><input type="checkbox" name="" id=""></td>
                  <td>' . $id . '</td>
                  <td>' . $name . '</td>
                  <td class="table-td-center">

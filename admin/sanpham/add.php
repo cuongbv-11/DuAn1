@@ -21,7 +21,7 @@
                 <label for="categories">Danh mục:</label>
                 <select class="form-select" name="iddm">
                   <option selected disabled>---Vui Lòng Chọn---</option>
-                  <?php
+                  <?php 
                   foreach ($listdanhmuc as $danhmuc) {
                     extract($danhmuc);
                     echo ' <option value="' . $id . '">' . $name . '</option>';
@@ -39,7 +39,7 @@
                 <label for="validationCustomUsername" class="form-label">Giá:</label>
                 <div class="input-group has-validation mb-3">
                   <span class="input-group-text" id="inputGroupPrepend">$</span>
-                  <input type="text" class="form-control" name="giasp" placeholder="Nhập giá sản phẩm" required>
+                  <input type="number" class="form-control" name="giasp" placeholder="Nhập giá sản phẩm" required>
                   <div class="invalid-feedback">
                     Vui lòng nhập giá sản phẩm!
                   </div>
