@@ -34,7 +34,7 @@ function loadall_sanpham($kyw="", $iddm=0)
     if ($iddm > 0) {
         $sql .= " and iddm='" . $iddm . "' ";
     }
-    $sql .= " ORDER BY id desc  limit 0,12 ";
+    $sql .= " ORDER BY id desc  limit 0,16 ";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
