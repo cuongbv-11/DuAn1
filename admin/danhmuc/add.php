@@ -32,7 +32,6 @@
                 value="Thêm Danh Mục">
               <a href="index.php?act=listdm"><input type="button" value="Danh Sách Danh Mục"></a>
             </div>
-            </form>
             <?php
             if (isset($thongbao) && ($thongbao != "")) {
               echo $thongbao;

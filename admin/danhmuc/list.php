@@ -21,7 +21,7 @@
                 <th width="10"><input type="checkbox" id="all"></th>
                 <th width="100">MÃ LOẠI</th>
                 <th>TÊN DANH MỤC</th>
-                <th width="150">Trạng thái</th> <!-- Thêm tiêu đề cho cột trạng thái -->
+                <!-- <th width="150">Trạng thái</th> Thêm tiêu đề cho cột trạng thái -->
                 <th width="150">Tính năng</th>
               </tr>
             </thead>
@@ -33,17 +33,16 @@
                 $xoadm = "index.php?act=xoadm&id=" . $id;
 
                 // Hiển thị trạng thái danh mục dưới dạng dropdown
-                $trangthai_options = '
-                  <select class="form-control" onchange="updateTrangThai(' . $id . ', this.value)">
-                    <option value="0"' . ($trangthai == 0 ? ' selected' : '') . '>Hoạt Động</option>
-                    <option value="1"' . ($trangthai == 1 ? ' selected' : '') . '>Không Hoạt Động</option>
-                  </select>';
+                // $trangthai_options = '
+                //   <select class="form-control" onchange="updateTrangThai(' . $id . ', this.value)">
+                //     <option value="0"' . ($trangthai == 0 ? ' selected' : '') . '>Hoạt Động</option>
+                //     <option value="1"' . ($trangthai == 1 ? ' selected' : '') . '>Không Hoạt Động</option>
+                //   </select>';
 
                 echo '<tr>
                  <td><input type="checkbox" name="" id=""></td>
                  <td>' . $id . '</td>
                  <td>' . $name . '</td>
-                 <td>' . $trangthai_options . '</td> <!-- Hiển thị trạng thái danh mục -->
                  <td class="table-td-center">
                      <a href="' . $suadm . '" class="btn btn-warning"
                     ><i class="far fa-edit" type="button"
