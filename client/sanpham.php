@@ -36,11 +36,12 @@ $isLoggedIn = isset($_SESSION['user']);
 </script>
 <div id="page-content" class="page-wrapper section">
     <div class="shop-section mb-80">
+    <br>
+    <br>
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 order-lg-1 order-1">
                     <div class="shop-content">
-                    
                         <div class="tab-content">
                             <div id="grid-view" class="tab-pane active show" role="tabpanel">
                                 <div class="row">
@@ -57,7 +58,7 @@ $isLoggedIn = isset($_SESSION['user']);
                                         $linksp = "index.php?act=sanphamct&idsp=" . $id;
                                     ?>
                                         <div class="col-lg-3 col-md-4 ' . $mr . '">
-                                            <div class="product-item">
+                                            <div class="product-item product-item-2">
                                                 <div class="product-img">
                                                     <a href="<?php echo $linksp ?>">
                                                         <img src="<?php echo $hinh ?>" alt="" />
@@ -69,9 +70,6 @@ $isLoggedIn = isset($_SESSION['user']);
                                                     </h6>
 
                                                     <h3 class="pro-price"><?php echo number_format($price) ?> ₫</h3>
-                                                    <ul class="action-button" style="background-color: darkred;">
-                                                        <button style="color: #fff;" data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price ?>)">Thêm vào giỏ hàng</button>
-                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -104,7 +102,7 @@ $isLoggedIn = isset($_SESSION['user']);
                     <!-- widget-color -->
                     <!-- operating-system -->
                     <aside class="widget operating-system box-shadow mb-30">
-                        <h6 class="widget-title border-left mb-20">Hãng điện thoại</h6>
+                        <h6 class="widget-title border-left mb-20">DANH MỤC</h6>
                         <form action="">
                             <?php
                             foreach ($dsdm as $dm) {
@@ -130,8 +128,7 @@ $isLoggedIn = isset($_SESSION['user']);
                                 $mr = "mr";
                             }
                             $linksp = "index.php?act=sanphamct&idsp=" . $id;
-
-                            echo '  <div class="product-item">
+                            echo '  <div class="product-item ">
                             <div class="product-img">
                                 <a href="' . $linksp . '">
                                     <img src="' . $hinh . '" alt="" />

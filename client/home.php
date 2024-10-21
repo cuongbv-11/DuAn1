@@ -1,11 +1,12 @@
 <!-- START SLIDER AREA -->
-<div class="slider-area youtube-bg bg-opacity-black-60 ptb-160 mb-80 section">
+
+<div class="slider-area youtube-bg bg-opacity-black-60 ptb-160 mb-50 section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="slider-desc-3 slider-desc-4  text-center">
                     <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
-                        <h1 class="slider2-title-2">CHÀO MỪNG ĐÃ ĐẾN TRANG ĐIỆN THOẠI NGON </h1>
+                        <h1 class="slider2-title-2">SUBAS THẾ GIỚI ĐIỆN THOẠI CHẤT </h1>
                     </div>
                     <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s">
                         <h2 class="slider2-title-3"></h2>
@@ -51,7 +52,7 @@
                                  <h6 class="product-title">
                                      <a href="' . $linksp . '">' . $name . '</a>
                                  </h6>
-                                 <h3 class="pro-price"> ' . number_format($price)   . 'đ</h3>
+                                 <h3 class="pro-price"> ' . number_format($price)   . ' ₫</h3>
                              </div>
                             
                          </div>';
@@ -72,7 +73,7 @@
         <div class="container">
             <div class="row">
                 <!-- up-comming-pro -->
-                <div class="col-lg-8">
+                <div class="col-lg-8 product-item-2">
                     <div class="up-comming-pro gray-bg up-comming-pro-2 clearfix">
                         <div class="up-comming-pro-img f-left">
                             <a href="#">
@@ -88,11 +89,11 @@
                     </div>
                 </div>
                 <div class="col-lg-4 d-block d-md-none d-lg-block">
-                    <div class="banner-item banner-1">
+                    <div class="banner-item banner-1 product-item-2">
                         <div class="ribbon-price">
                             <span>GIẢM GIÁ</span>
                         </div>
-                        <div class="banner-img">
+                        <div class="banner-img ">
                             <a href="index.php?act=sanphamct&idsp=19"><img src="upload/Samsung Galaxy S23 Ultra.jpg" alt=""></a>
                         </div>
 
@@ -132,7 +133,7 @@
 
                                 ?>
                                     <div class="col-lg-3 col-md-4 <?php echo $mr ?>">
-                                        <div class="product-item ">
+                                        <div class="product-item product-item-2">
                                             <div class="product-img">
                                                 <a href="<?php echo $linksp ?>">
                                                     <img src="<?php echo $hinh ?>" alt="" />
@@ -144,9 +145,7 @@
                                                 </h6>
                                 
                                                 <h3 class="pro-price"> <?php echo number_format($price) ?> ₫ </h3>
-                                                <ul class="action-button" style="background-color: darkred;">
-                                                    <button style="color: #fff;" data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price ?>)">Thêm vào giỏ hàng</button>
-                                                </ul>
+                                                
                                             </div>
                                         </div>
                                     </div>

@@ -84,7 +84,7 @@ if (isset($_SESSION['selectedProducts'])) {
 ?>
 <div class="tab-pane" id="checkout">
     <div class="checkout-content box-shadow p-30">
-        <form action="" method="post">
+        <form action="" class="needs-validation" method="post" novalidate>
             <div class="row">
                 <!-- billing details -->
                 <div class="col-md-6">
@@ -104,10 +104,26 @@ if (isset($_SESSION['selectedProducts'])) {
                         }
                         ?>
                         <h6 class="widget-title border-left mb-20">Thông Tin Nhận Hàng</h6>
-                        <div><input type="text" name="txthoten" id="" placeholder="Họ và tên" required value="<?php echo $name ?>"></div>
-                        <div><input type="tel" value="<?php echo $tel ?>" name="txttel" id="" placeholder="Số điện thoại" required></div>
-                        <div><input type="email" name="txtemail" id="" placeholder="Email" required value="<?php echo $email ?>"></div>
-                        <div><input type="text" name="txtaddress" id="" placeholder="Địa chỉ" required value="<?php echo $address ?>"></div>
+                        <div><input type="text" name="txthoten" placeholder="Họ và tên" required>
+                            <div class="invalid-feedback">
+                                Vui lòng nhập họ và tên!
+                            </div>
+                        </div>
+                        <div><input type="text" name="txttel" placeholder="Số điện thoại" required>
+                            <div class="invalid-feedback">
+                                Vui lòng nhập số điện thoại!
+                            </div>
+                        </div>
+                        <div><input type="text" name="txtemail" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Vui lòng nhập email!
+                            </div>
+                        </div>
+                        <div><input type="text" name="txtaddress" placeholder="Địa chỉ" required>
+                            <div class="invalid-feedback">
+                                Vui lòng nhập địa chỉ!
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -173,4 +189,24 @@ if (isset($_SESSION['selectedProducts'])) {
 </div>
 </form>
 </div>
-</div>
+</div><script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>

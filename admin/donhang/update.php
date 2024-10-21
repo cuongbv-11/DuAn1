@@ -87,7 +87,7 @@ input[type="submit"]:hover {
 
 <div class="row2">
     <div class="row2 font_title">
-        <h1>CẬP NHẬT ĐƠN HÀNG</h1>
+        <h1>CHI TIẾT ĐƠN HÀNG</h1>
     </div>
     <div class="row2 form_content">
         <form action="index.php?act=updatebill" method="post">

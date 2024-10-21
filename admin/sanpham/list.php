@@ -20,12 +20,12 @@
               <thead>
                 <tr >
                   <th scope="col">#</th>
-                  <th scope="col">Tên Sản Phẩm</th>
-                  <th scope="col">Hình Ảnh</th>
-                  <th scope="col">Giá</th>
-                  <th scope="col">Mô Tả</th>
-                  <th scope="col">Lượt Xem</th>
-                  <th scope="col">Chức Năng</th>
+                  <th width="150">TÊN SẢN PHẨM</th>
+                  <th scope="col">HÌNH ẢNH</th>
+                  <th scope="col">GIÁ</th>
+                  <th scope="col">MÔ TẢ</th>
+                  <th scope="col">LƯỢT XEM</th>
+                  <th scope="col">CHỨC NĂNG</th>
                 </tr>
               </thead>
               <tbody>

@@ -48,7 +48,7 @@ $isLoggedIn = isset($_SESSION['user']);
                         // Redirect only if the user is logged in
                         window.location.href = 'index.php?act=order2';
                     } else {
-                        alert(response); // Display the error message
+                        // alert(response); // Display the error message
                     }
                 },
                 error: function(error) {
@@ -73,6 +73,7 @@ $isLoggedIn = isset($_SESSION['user']);
                 <div class="col-lg-12">
                     <!-- single-product-area start -->
                     <div class="single-product-area mb-80">
+                        <br>
                         <div class="row">
                             <!-- imgs-zoom-area start -->
                             <div class="col-lg-5">
@@ -103,25 +104,19 @@ $isLoggedIn = isset($_SESSION['user']);
                             <!-- single-product-info start -->
                             <div class="col-lg-7">
                                 <div class="single-product-info">
-                                    <h2>
+                                    <h2><strong>
                                         <?php echo  $name; ?>
+                                        <hr>
+                                        </strong>
                                     </h2>
-                                    <!--  hr -->
-                                    <hr>
-                                    <!-- single-pro-color-rating -->
-                                  
-                                    <!-- hr -->
-                                    <hr>
-                                    <!-- plus-minus-pro-action -->
-
-                                    <!-- plus-minus-pro-action end -->
-
-                                    <!-- single-product-price -->
+                                    <?php echo  $mota; ?>
+                                    <br>
+                                    <br>
                                     <h3 class="pro-price"><?php
                                                             echo number_format($price) ?> ₫
                                     </h3>
-
-                                    <hr>
+                                    <br>
+                                    <br>
                                     <div>
                                         <?php if ($isLoggedIn) { ?>
                                             <a href="index.php?act=order2" class="button extra-small button-black" tabindex="-1">
@@ -215,7 +210,7 @@ $isLoggedIn = isset($_SESSION['user']);
                                             $i = 0;
                                             $hinh =  $img_path . $img;
                                             if (($i == 2) || ($i == 5) || ($i == 8)) {
-                                                $mr = "";
+                                                $mr = "";   
                                             } else {
                                                 $mr = "mr";
                                             }

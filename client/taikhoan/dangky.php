@@ -1,10 +1,11 @@
+<br>
 <div class="login-section mb-80">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="new-customers">
                     <form action="index.php?act=dangky" method="post">
-                        <h6 class="widget-title border-left mb-50">Đăng ký tài khoản mới</h6>
+                        <h6 class="widget-title border-left">Đăng ký tài khoản mới</h6>
                         <p><small><a href="index.php?act=dangnhap">Trở về trang đăng nhập</a></small></p>
                         <div class="login-account p-30 box-shadow">
                             <input type="text" placeholder="Email" name="email">
@@ -29,7 +30,7 @@
                             </div>
                         </div>
                     </form>
-                    <h6 class="widget-title border-left mb-50">
+                    <h6 class="widget-title  mb-50">
                         <?php
                         if ((isset($thongbao)) && ($thongbao != "")) {
                             echo $thongbao;

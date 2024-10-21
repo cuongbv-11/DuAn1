@@ -1,11 +1,12 @@
+<br>
 <div class="login-section mb-80">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="new-customers">
                     <form action="index.php?act=edit_taikhoan" method="post">
-                        <h6 class="widget-title border-left mb-50">Cập nhật tài khoản</h6>
-                        <p><small><a href="index.php?act=dangnhap">Trở về trang đăng nhập</a></small></p>
+                        <h6 class="widget-title border-left">Cập nhật tài khoản</h6>
+                        <p><small><a href="index.php?act=dangnhap">Trở về trang thông tin</a></small></p>
                         <?php
                         if ((isset($_SESSION['user'])) && (is_array($_SESSION['user']))) {
                             extract($_SESSION['user']);
@@ -31,7 +32,7 @@
                             </div>
                         </div>
                     </form>
-                    <h6 class="widget-title border-left mb-50">
+                    <h6 class="widget-title  mb-50">
                         <?php
                         if ((isset($thongbao)) && ($thongbao != "")) {
                             echo $thongbao;
@@ -41,14 +42,4 @@
                 </div>
             </div>
         </div>
-    </div>
 
-
-
-
-
-
-
-
-
-</div>

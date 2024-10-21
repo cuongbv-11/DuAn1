@@ -22,7 +22,7 @@ $_SESSION['resultTotal'] = $totalOrderAmount;
                         <li>
                             <a href="index.php?act=mybill">
                                 <span>02</span>
-                                Đơn mua
+                                Đơn Hàng Của Bạn<nav></nav>
                             </a>
                         </li>
                     </ul>
@@ -35,10 +35,10 @@ $_SESSION['resultTotal'] = $totalOrderAmount;
                                     <table class="text-center">
                                         <thead>
                                             <tr align="center">
-                                                <th>Tên sản phẩm</th>
+                                                <th >Tên sản phẩm</th>
                                                 <th>Hình ảnh</th>
                                                 <th>Đơn Giá</th>
-                                                <th>Số lượng</th>
+                                                <th width="150">Số lượng</th>
                                                 <th>Thành tiền</th>
                                                 <th>Trạng Thái</th>
                                             </tr>

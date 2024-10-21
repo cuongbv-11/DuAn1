@@ -11,19 +11,17 @@
       <div class="col-md-12">
         <div class="tile">
           <div class="tile-body">
-            <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0"
-              id="sampleTable">
+            <table class="table table-hover " style="width: 100%">
               <thead>
                 <tr>
-                  <th width="10"><input type="checkbox" id="all"></th>
-                  <th>MÃ TÀI KHOẢN</th>
-                  <th width="150">TÊN ĐĂNG NHẬP</th>
-                  <th width="20">MẬT KHẨU</th>
-                  <th width="300">EMAIL</th>
-                  <th>ĐỊA CHỈ</th>
-                  <th>ĐIỆN THOẠI</th>
-                  <th>Chức vụ</th>
-                  <th width="100">Tính năng</th>
+                  <th scope="col">#</th>
+                  <th scope="col">TÊN ĐĂNG NHẬP</th>
+                  <th scope="col">MẬT KHẨU</th>
+                  <th scope="col">EMAIL</th>
+                  <th scope="col">ĐỊA CHỈ</th>
+                  <th scope="col">ĐIỆN THOẠI</th>
+                  <th scope="col">Chức vụ</th>
+                  <th scope="col">Chức năng</th>
                 </tr>
               </thead>
               <tbody>
@@ -32,17 +30,18 @@
                     extract($taikhoan);
                     $xoatk = "index.php?act=xoatk&id=" . $id;
                     $chucVuInWords = convertChucVu($role);
-                    echo '<td><input type="checkbox" name="" id=""></td>
-                 <td>' . $id . '</td>
+                    echo '<td>' . $id . '</td>
                  <td>' . $user . '</td>
                  <td style="visibility: hidden">' . $pass . '</td>
                  <td>' . $email . '</td>
                  <td>' . $address. '</td>
                  <td>' . $tel . '</td>
                  <td>' . $chucVuInWords . '</td>
-                 <td class="table-td-center"><a href ="' .$xoatk. '"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
-                      onclick="myFunction(this)"><i class="fas fa-trash-alt"></i></a>
-                    </button>
+                 <td class="table-td-center">
+                    <a href="' . $xoatk . '" class="btn btn-danger"
+                    ><i class="far fa-trash-alt" onclick="myFunction(this)"  type="button" id="show-emp" data-toggle="modal"
+                    data-target="#ModalUP"></i> Xóa</a
+                  >
                     </td>
                   </td>
              </tr>';

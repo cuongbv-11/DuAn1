@@ -21,7 +21,7 @@
                 <th width="100">#</th>
                 <th>TÊN DANH MỤC</th>
                 <!-- <th width="150">Trạng thái</th> Thêm tiêu đề cho cột trạng thái -->
-                <th width="150">Chức năng</th>
+                <th width="150">CHỨC NĂNG</th>
               </tr>
             </thead>
             <tbody>

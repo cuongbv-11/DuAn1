@@ -89,7 +89,7 @@
                                         <?php
                                         // Check if the user is logged in
                                         if (isset($_SESSION['user'])) {
-                                            echo '<li class="mega-parent"><a href="index.php?act=mybill">Đơn Mua</a></li>';
+                                            echo '<li class="mega-parent"><a href="index.php?act=mybill">Đơn Hàng Của Bạn</a></li>';
                                         }
                                         ?>
                                         <li><a href="index.php?act=dangnhap"><i class="zmdi zmdi-lock"></i> Tài Khoản</a></li>
