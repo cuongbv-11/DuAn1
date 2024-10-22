@@ -37,10 +37,6 @@
                   $deleteLink = "index.php?act=xoadh&id=" . $id; 
                   $trangthai = $dh['trangthai'];
                   $ttdh = get_ttdh($trangthai);
-<<<<<<< HEAD
-=======
-                  // $shippingFee = 15000;
->>>>>>> b9b8d274429b864da85749a95c5f0ad3f561283e
                   $phuongthucthanhtoan = convertthanhtoan($pttt);
 
                   echo '<tr>
@@ -51,11 +47,7 @@
                   <td>' . $sdt . '</td>
                   <td>' . $email . '</td>
                   <td>' . $diachi . '</td>
-<<<<<<< HEAD
                   <td>' . number_format($tongtien , 0, ",", ".") . ' ₫</td>
-=======
-                  <td>' . number_format($tongtien, 0, ",", ".") . ' </td>
->>>>>>> b9b8d274429b864da85749a95c5f0ad3f561283e
                   <td>' .  $phuongthucthanhtoan . '</td>
                   <td>' . $ttdh . '</td>
                   <td>
