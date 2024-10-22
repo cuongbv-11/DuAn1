@@ -1,7 +1,7 @@
 <?php
 // Initialize total order amount
 $totalOrderAmount = 0;
-$shippingFee = 15000; // Define the shipping fee
+// $shippingFee = 15000; // Define the shipping fee
 
 // Calculate the total for each item in the order
 foreach ($lishdh as $bill) {
@@ -60,14 +60,14 @@ $_SESSION['resultTotal'] = $totalOrderAmount;
                                                  
                                                 </tr>
                                             <?php } ?>
-                                            <tr>
+                                            <!-- <tr>
                                                 <td colspan="4" align="right"><strong>Phí vận chuyển:</strong></td>
                                                 <td><?php echo number_format($shippingFee, 0, ",", "."); ?> đ</td>
                                                 <td></td>
-                                            </tr>
+                                            </tr> -->
                                             <tr>
                                                 <td colspan="4" align="right"><strong>Tổng tiền:</strong></td>
-                                                <td><?php echo number_format($totalOrderAmount + $shippingFee, 0, ",", "."); ?> đ</td>
+                                                <td><?php echo number_format($totalOrderAmount , 0, ",", "."); ?> đ</td>
                                                 <td></td>
                                             </tr>
                                         </tbody>

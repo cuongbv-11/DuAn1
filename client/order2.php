@@ -124,15 +124,15 @@ if (!isset($_SESSION['buy'])) {
                                 </tr>
                                 <?php
                             }
-                            $shippingFee = 15000;
+                            // $shippingFee = 15000;
                             ?>
-                            <tr>
+                            <!-- <tr>
                                 <td><b>Phí vận chuyển</b></td>
                                 <td><b><?php echo number_format($shippingFee, 0, ",", "."); ?> ₫</b></td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <td><b>Tổng tiền</b></td>
-                                <td><b><?php echo number_format($_SESSION['resultTotal'] + $shippingFee, 0, ",", "."); ?>
+                                <td><b><?php echo number_format($_SESSION['resultTotal'], 0, ",", "."); ?>
                                         ₫</b></td>
                             </tr>
                         </table>
