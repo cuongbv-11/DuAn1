@@ -33,7 +33,7 @@
                   $suadh = "index.php?act=updatebill&iddh=" . $id;
                   $trangthai = $dh['trangthai'];
                   $ttdh = get_ttdh($trangthai);
-                  $shippingFee = 15000;
+                  // $shippingFee = 15000;
                   $phuongthucthanhtoan = convertthanhtoan($pttt);
                   echo '<tr>
                   <td>' . $id . '</td>
@@ -41,7 +41,7 @@
                   <td>' . $sdt . '</td>
                   <td>' . $email . '</td>
                   <td>' . $diachi . '</td>
-                  <td>' . number_format($tongtien + $shippingFee, 0, ",", ".") . ' </td>
+                  <td>' . number_format($tongtien, 0, ",", ".") . ' </td>
                   <td>' .  $phuongthucthanhtoan . '</td>
                   <td>'.$ttdh.'</td>
                   <td>
