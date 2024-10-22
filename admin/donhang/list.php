@@ -10,19 +10,22 @@
       <div class="col-md-12">
         <div class="tile">
           <div class="tile-body">
-            
-            <table class="table table-hover" style="width: 100%">
+            <div class="row element-button">
+            </div>
+            <table class="table table-hover table-bordered" id="sampleTable">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">HỌ VÀ TÊN</th>
-                  <th scope="col">SĐT</th>
-                  <th scope="col">EMAIL</th>
-                  <th scope="col">ĐỊA CHỈ</th>
-                  <th scope="col">TỔNG TIỀN</th>
-                  <th scope="col">PHƯƠNG THỨC THANH TOÁN</th>
-                  <th scope="col">TRẠNG THÁI</th>
-                  <th scope="col">CHỨC NĂNG</th>
+                  <th width="10"><input type="checkbox" id="all"></th>
+                  <th>ID</th>
+                  <th>ID user</th>
+                  <th>Họ tên</th>
+                  <th>Sdt </th>
+                  <th>Email</th>
+                  <th>Địa Chỉ</th>
+                  <th>Tổng tiền</th>
+                  <th>Phương thức thanh toán</th>
+                  <th>Trạng Thái</th>
+                  <th>Chức Năng</th>
                 </tr>
               </thead>
               <tbody>
@@ -31,29 +34,31 @@
                   extract($dh);
                   $xoadh = "index.php?act=xoadh&id=" . $id;
                   $suadh = "index.php?act=updatebill&iddh=" . $id;
+                  $deleteLink = "index.php?act=xoadh&id=" . $id; 
                   $trangthai = $dh['trangthai'];
                   $ttdh = get_ttdh($trangthai);
-                  $shippingFee = 15000;
                   $phuongthucthanhtoan = convertthanhtoan($pttt);
+
                   echo '<tr>
+                  <td><input type="checkbox" name="" id=""></td>
                   <td>' . $id . '</td>
+                  <td>' . $id_user . '</td>
                   <td>' . $hoten . '</td>
                   <td>' . $sdt . '</td>
                   <td>' . $email . '</td>
                   <td>' . $diachi . '</td>
-                  <td>' . number_format($tongtien + $shippingFee, 0, ",", ".") . ' </td>
+                  <td>' . number_format($tongtien , 0, ",", ".") . ' ₫</td>
                   <td>' .  $phuongthucthanhtoan . '</td>
-                  <td>'.$ttdh.'</td>
+                  <td>' . $ttdh . '</td>
                   <td>
-                  <a href="' . $suadh . '" class="btn btn-warning"
-                    ><i class="far fa-edit" type="button"
-                    onclick="myFunction(this)"></i> Sửa</a
-                  >
-                  <a href="' . $xoadh . '" class="btn btn-danger"
-                    ><i class="far fa-trash-alt"  type="button" id="show-emp" data-toggle="modal"
-                    data-target="#ModalUP"></i> Xóa</a
-                  >
-                      </td>
+                      <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" data-status="' . $trangthai . '" data-url="' . $suadh . '"><i class="fas fa-edit"></i></button>';
+                  
+         
+                  if ($trangthai == '0') {
+                      echo '<a href="' . $deleteLink . '" class="btn btn-danger btn-sm" title="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xóa đơn hàng này không?\')"><i class="fas fa-trash-alt"></i></a>';
+                  }
+
+                  echo '</td>
               </tr>';
                 }
                 ?>
@@ -65,6 +70,7 @@
     </div>
   </form>
 </main>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const editButtons = document.querySelectorAll('.edit');
@@ -73,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const status = parseInt(this.getAttribute('data-status'));
             const url = this.getAttribute('data-url');
 
-            if (status >= 3) { // Assuming 3 is the "completed" status
+            if (status >= 3) { 
                 alert('Đơn hàng đã hoàn tất và không thể chỉnh sửa.');
             } else {
                 window.location.href = url; // Redirect to the edit page
@@ -82,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
 
 
 <!-- Essential javascripts for application to work-->

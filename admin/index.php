@@ -263,7 +263,7 @@ if (isset($_GET['act'])) {
             case 'listctdh':
                 if ($userRole == 1) {
                     $listctdonhang = loadall_chitietdonhang();
-                    include "chitiet/chitietdonhang.php";
+                    include "donhang/chitietdonhang.php";
                 } else {
                     echo "Access denied!";
                 }
@@ -288,9 +288,8 @@ if (isset($_GET['act'])) {
                         $trangthai = $_POST['trangthai'];
                         $id = $_POST['id'];
                         update_bill($id, $trangthai);
-                        // Redirect to the list of orders after updating
                         header("location:index.php?act=listdh");
-                        exit(); // Make sure to exit after header redirection
+                        exit(); 
                     }
                     include "donhang/update.php";
                 } else {

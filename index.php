@@ -68,7 +68,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $_SESSION['success2'] = $idBill;
                     include "client/success2.php";
                 } else {
-                    // Display the "Buy Now" page
                     include "client/order2.php";
                 }
             } else {

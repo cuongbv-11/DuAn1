@@ -48,7 +48,7 @@ $_SESSION['resultTotal'] = $totalOrderAmount;
                                                 $hinh = $img_path . $bill['img'];
                                                 $trangthai = $bill['trangthai'];
                                                 $ttdh = get_ttdh($trangthai);
-                                                $deleteLink = "index.php?act=deleteItem&id=" . $bill['id']; // Assuming 'id' is the unique identifier
+                                                $deleteLink = "index.php?act=deleteItem&id=" . $bill['id']; 
                                             ?>
                                                 <tr align="center">
                                                     <td><?php echo $bill['pro_name'] ?><br></td>

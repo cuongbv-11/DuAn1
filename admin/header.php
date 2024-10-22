@@ -70,7 +70,9 @@
       <li><a class="app-menu__item" href="index.php?act=listdm"><i class='app-menu__icon bx bx-task'></i><span
             class="app-menu__label">Quản lý danh mục</span></a></li>
       <li><a class="app-menu__item" href="index.php?act=listdh"><i class='app-menu__icon bx bx-task'></i><span
-            class="app-menu__label">Quản lý Đơn Đặt Hàng</span></a></li>
+            class="app-menu__label">Quản lý Đơn Đặt Hàng</span></a></li>   
+            <li><a class="app-menu__item" href="index.php?act=listctdh"><i class='app-menu__icon bx bx-task'></i><span
+            class="app-menu__label">Quản lý Chi Tiết Đơn Hàng</span></a></li>
 
       <li><a class="app-menu__item" href="index.php?act=dsbl"><i class='app-menu__icon bx bx-run'></i><span
             class="app-menu__label">Bình luận
