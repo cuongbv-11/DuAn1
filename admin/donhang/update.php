@@ -84,12 +84,15 @@ input[type="submit"]:hover {
         $currentStatus = $trangthai; 
     }
     ?>
-
-<div class="row2">
+<main class="app-content">
+    
+      <div class="tile">
+        
+<div class="">
     <div class="row2 font_title">
         <h1>CHI TIẾT ĐƠN HÀNG</h1>
     </div>
-    <div class="row2 form_content">
+    <div class=" form_content">
         <form action="index.php?act=updatebill" method="post">
             <div class="row2 mb10 form_content_container">
                 <label>ID Đơn Hàng:</label>
